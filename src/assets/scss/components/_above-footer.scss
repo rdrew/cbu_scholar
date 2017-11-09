@@ -1,8 +1,19 @@
-.above-footer {
+.l-region--above-footer {
+    @include xy-grid;
+
+
     padding-top: $global-padding;
     padding-bottom: $global-padding;
     ul {
         @extend .no-bullet;
+    }
+    .block {
+            @include xy-cell(12);
+        @include breakpoint(large) {
+
+            @include xy-cell(6);
+
+        }
     }
 }
 

@@ -1,0 +1,126 @@
+.tb-megamenu button.btn-navbar {
+    display: none;
+}
+//################### style ######################
+
+.top-bar {
+    a {
+        color:$white;
+    }
+    height:rem-calc(63);
+}
+
+.branding {
+    li:first-child {
+        border-right:1px solid $white;
+        padding-right:.5rem;
+        margin-right:.5rem;
+    }
+    a {
+        @include padding(0,0,0,0);
+    }
+
+    font-family: $header-font-family;
+    font-size: rem-calc(22);
+}
+
+.site-logo {
+    //float:left;
+    width:rem-calc(120);
+    height:auto;
+}
+.top-left,
+.top-center,
+.top-right {
+    //outline:1px solid #fff;
+}
+
+.top-bar .view-current-library-hours {
+    text-align:center;
+    border: 1px solid #fff;
+    background:#ccc;
+    display: inline-block;
+    float: right;
+    font-size:rem-calc(14);
+    border-radius: $global-radius;
+    a {
+
+        color:#333;
+    }
+}
+.top-bar button {
+    float:right;
+    margin-top:18px;
+    //@include hamburger();
+}
+
+//################### sstructure ######################
+
+.top-bar { 
+    $logo-calendar-width: 240px;
+    $top-bar-breakpoint: 1024px;
+    .branding {
+        @include breakpoint($top-bar-breakpoint){
+            .site-name {
+                display:none;
+            }
+        }
+        @include breakpoint(1200px){
+            .site-name {
+                display:initial;
+            }
+        }
+    }
+    .view-current-library-hours {
+        display: none;
+        @include breakpoint($top-bar-breakpoint) {
+            display: inline-block;
+        }
+
+    }
+    button {
+        @include breakpoint($top-bar-breakpoint) {
+            display:none;
+        }
+    }
+    .top-center {
+
+        display:none;
+        @include breakpoint($top-bar-breakpoint) {
+            display: initial;
+        }
+    }
+    .top-left, .top-right {
+        @include breakpoint(large) {
+            width:175px; 
+        }
+        @include breakpoint(1200px) {
+            width: $logo-calendar-width;
+        }
+    }
+}
+//.top-bar-center {
+//flex: 1 0 auto;
+//}
+
+.sub {
+    transform: translateX(-142px);
+    width: 900px;
+    @include breakpoint(1200px) {
+
+        width: 1170px;
+        transform: translateX(-276px);
+    }
+}
+
+//#########################################
+
+.top-bar {
+    padding-top:0;
+    padding-bottom:0;
+}
+
+
+.top-right {
+
+}

@@ -1,0 +1,24 @@
+
+.search-result {
+    dl {
+        border-top: 4px solid $light-gray;
+    }
+    dd, dt {
+        display: inline-block;
+        padding-top:$global-padding/3;
+        padding-bottom:$global-padding/3;
+        border-bottom: 1px solid $light-gray;
+    }
+    dd {
+        display: inline-block;
+        width: 79%;
+    }
+    dt {
+        width: 20%;
+    }
+    margin-bottom:$global-margin*3;
+}
+
+
+
+

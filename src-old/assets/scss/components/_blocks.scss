@@ -1,0 +1,33 @@
+
+.block__reserves {
+    ul {
+        @extend .no-bullet;
+        margin:0;
+    }
+    a {
+        font-family:$roboto-condensed;
+        
+    }
+    li {
+        font-family:$roboto-condensed;
+        border-bottom:1px dotted #ccc;
+        transition: all .4s ease;
+        &:hover {
+            background:rgb(212, 220, 202);
+                border-left:2px solid $green;
+            &:before {
+
+                color:$green;
+                font-weight:bold;
+                content: "> ";
+            }
+        }
+        
+    }
+    li:first-child {
+        border-top:1px dotted #ccc;
+    }
+}
+.content {
+    @include clearfix;
+}

@@ -1,0 +1,43 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search Face</title>
+        <link rel="stylesheet" type="text/css" href="{{root}}assets/fonts/proxima-nova-web-fonts/fonts/fonts.css" />
+        <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    </head>
+    <body class="sidebar-layout">
+        <div class="top-bar__wrapper">
+            {{> header}}
+        </div>
+
+
+        <!--content-region-->
+        <!--end of content-region-->
+
+        <div class="content grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-9  medium-order-2">
+                    <h1>{{title}}</h1>
+                    <hr>
+                    {{> body}}
+                </div>
+                <div class="cell medium-3  medium-order-1">
+                    {{> sidebar }}
+                </div>
+            </div>
+        </div>
+
+        {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+        <footer>
+            {{> footer}}
+        </footer>
+
+        <script src="{{root}}assets/js/app.js"></script>
+    </body>
+</html>

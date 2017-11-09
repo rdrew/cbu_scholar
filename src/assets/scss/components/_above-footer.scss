@@ -1,0 +1,11 @@
+.above-footer {
+    padding-top: $global-padding;
+    padding-bottom: $global-padding;
+    ul {
+        @extend .no-bullet;
+    }
+}
+
+.list-block {
+
+}

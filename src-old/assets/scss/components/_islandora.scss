@@ -1,0 +1,46 @@
+//breadcrumbs
+.breadcrumb {
+    @extend .breadcrumbs;
+}
+
+.islandora-video-content-wrapper {
+    margin-bottom: $global_margin;
+} 
+fieldset {
+    @extend .fieldset;
+}
+.cke_editable {
+    display:none;
+}
+.islandora-video-content {
+    width: 100%;
+    height: auto;
+}
+
+video#islandora_videojs_html5_api {
+    width: 100%;
+}
+
+div#islandora_videojs {
+    width: 100% !important;
+    height: 382px !important;
+}
+.islandora-basic-collection-grid {
+    //grid item
+    //dl {
+        //@include card-container();
+
+    //}
+    ////image
+    //dt {
+
+        //@include card-section();
+        //padding-bottom: 0;
+    //}
+    ////caption
+    //dd {
+        //@include card-section();
+        //padding-top:0;
+    //}
+
+}

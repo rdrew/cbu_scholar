@@ -1,0 +1,159 @@
+//blocks
+.l-main aside > .block,
+.section-people .content .block {
+
+    @include callout;
+    padding:0;
+    .block__title {
+        background:$black;
+        color:$white;
+
+        padding:5px $global-padding 0;
+        margin:0;
+        border-radius: $global-radius $global-radius 0 0;
+        border-bottom: 4px solid $green;
+
+    }
+    .block__content {
+        padding:$global-padding;
+
+    }
+
+}
+
+//file upload buttons
+input[type="submit"] {
+
+    @include button(false, $success-color, auto, auto, solid);
+    margin-bottom:0;
+}
+
+.search-block-form {
+    .form-type-textfield { 
+        width:100%;
+    }
+    label {
+        display:none;
+    }
+    .container-inline {
+        @extend .input-group;
+    }
+    input[type="text"] {
+
+        @extend .input-group-field;
+        //@include button();
+        border-radius: $global-radius 0 0 $global-radius;
+    }
+    input[type="submit"] {
+        @extend .input-group-button;
+        @include button();
+        @include button-style(
+        //$background, 
+        $success-color,
+        //$background-hover, 
+        auto,
+        //$color
+        auto
+        );
+        border-radius: 0 $global-radius $global-radius 0;
+    }
+}
+
+//form cancel button 
+a#edit-cancel {
+
+    @include button();
+    @include button-style(
+    //$background, 
+    $alert-color,
+    //$background-hover, 
+    auto,
+    //$color
+    auto
+    );
+    margin-bottom:0;
+}
+.confirm-form .form-actions {
+    > * {
+
+        //@extend .button;
+    }
+    @include button-group('*', 0px);
+
+    *:first-child {
+        border-radius: $global-radius 0 0 $global-radius;
+    }
+    #edit-cancel {
+        border-radius: 0 $global-radius $global-radius 0;
+    }
+}
+.pager {
+    @include pagination-container;
+    .pager__item--current {
+        @include pagination-item-current;
+    }
+}
+
+.progress {
+    //Adds styles for a progress bar container.
+    .bar {
+
+        @include progress-container;
+    }
+    .filled {
+
+        @include progress-meter;
+    }
+    .percentage {
+
+        //@include progress-meter-text;
+    }
+}
+.tb-megamenu select, .tb-megamenu textarea, .tb-megamenu input[type="text"], .tb-megamenu input[type="password"], .tb-megamenu input[type="datetime"], .tb-megamenu input[type="datetime-local"], .tb-megamenu input[type="date"], .tb-megamenu input[type="month"], .tb-megamenu input[type="time"], .tb-megamenu input[type="week"], .tb-megamenu input[type="number"], .tb-megamenu input[type="email"], .tb-megamenu input[type="url"], .tb-megamenu input[type="search"], .tb-megamenu input[type="tel"], .tb-megamenu input[type="color"], .tb-megamenu .uneditable-input {
+    display: inline-block;
+    height: inherit;
+    padding: initial;
+    margin-bottom: initial;
+    font-size: initial;
+    line-height: initial;
+    color: #555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+form.input-group {
+    max-height: 40px;
+}
+.inline-search {
+    form {
+        @extend .input-group;
+
+    }
+    select {
+
+
+        width: auto;
+        border: 1px solid #C0C0C0;
+        background-color: #E0E0E0;
+        height: 40px;
+
+
+    }
+    input[type="text"] {
+        @extend .input-group-field;
+        height:rem-calc(40) !important;
+        //display: none;
+    }
+    input[type="submit"] {
+        //display: none;
+        border-radius: 0 $global-radius $global-radius 0;
+        //@extend .input-group-button;
+    }
+}
+//page title icons 
+h1 i.fa {
+    color:$red;
+    margin-right: $global-margin/2;
+}
+
+

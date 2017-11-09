@@ -1,0 +1,74 @@
+.section-people .people-content {
+    @include breakpoint(medium)  {
+        @include flex-grid-row(); 
+        .left {
+            @include flex-grid-column(2, 0);
+        }
+        .right {
+            @include flex-grid-column(10);
+        }
+    }
+}
+.section-people {
+    .media-object-section:first-child {
+        //padding-right: $global-padding*2
+    }
+    .field--name-field-job-title {
+        font-family: $roboto-condensed;
+        color:$green;
+    }
+    .field--name-body {
+        margin-top:$global-margin;
+    }
+    .thumbnail {
+        width:100%;
+    }
+    .thumbnail img {
+        width:100%;
+    }
+    .group-bio-info-2 {
+
+
+            .field__label {
+                font-family: $roboto-condensed;
+
+            }
+
+        @include breakpoint(medium)  {
+            .field__label {
+                display: inline-block;
+                width: rem-calc(170);
+                font-family: $roboto-condensed;
+
+            }
+
+            .field__items {
+                display: inline-block;
+
+            }
+        }
+
+
+
+
+    }
+    .people-subject {
+        .block__content {
+            padding: $global-padding/2 !important;
+        }
+        ul {
+            margin-bottom:0;
+            //margin:0;
+            @extend .no-bullet;
+        }
+        li {
+            border-bottom: 1px dotted $medium-gray;
+            &:last-child {
+                border-bottom:0px;
+            }
+            a {
+                font-family:$roboto-condensed;
+            }
+        }
+    }
+}

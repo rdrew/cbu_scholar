@@ -1,0 +1,11 @@
+.plusminus {
+    float:right;
+    .plus, .minus {
+    }
+}
+.islandora-solr-facet {
+    @extend .no-bullet;
+}
+.sidebar {
+    margin-top: 11px;
+}

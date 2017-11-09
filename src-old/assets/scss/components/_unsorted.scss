@@ -1,0 +1,112 @@
+h3 {
+    font-weight: bold;
+}
+.databases-table {
+    table {
+        @include breakpoint(small only) {
+
+            @include table-stack();
+        }
+        p {
+            margin: 0;
+        }
+        thead {
+            //background: $secondary-color;
+            background: $gray-green;
+            color:#fff;
+        }
+        .views-field-title {
+            width: rem-calc(250);
+        }
+        .field--name-body {
+            font-family: $roboto-condensed;
+        }
+        .views-field-view-node {
+
+            //width:200px;
+            width: rem-calc(95);
+            text-align: center;
+            i {
+
+                font-size: 1.5rem;
+            }
+            a:hover {
+                color: $green;
+            }
+        }
+    }
+}
+.node__content span {
+    font-family: $roboto !important;
+    font-size:1rem !important;
+    color: #333 !important;
+}
+//##################
+//  reserves pages
+//##################
+.node--course-reserve {
+    .field--label-inline {
+        @include clearfix;
+    }
+    border-bottom: 1px solid #ccc;
+    margin-bottom: $global-margin;
+    padding-bottom: $global-padding;
+}
+.course-reserves-info {
+    .atom-entry {
+        font-weight: bold;
+        > * {
+            //outline: 1px solid #ccc;
+        }
+            //outline: 1px solid #ccc;
+            //border-bottom:1px dotted #ccc;
+        @include flex-grid-row();
+    border-left: 4px solid #ccc;
+
+        font-family: $roboto-condensed;
+
+    }
+    .atom-list {
+        font-family: $roboto;
+        font-weight: 300;
+        font-size:.9rem;
+    }
+    .atom-title {
+        @include flex-grid-column(12);
+        font-size: 1.2rem;
+        font-family: $roboto-condensed;
+        margin-bottom: $global-margin/4;
+    }
+    .atom-publication-date {
+        @include flex-grid-column(12);
+        margin-bottom: $global-margin/4;
+
+    }
+    .atom-author {
+        @include flex-grid-column(6);
+
+    }
+    .atom-holdings {
+        @include flex-grid-column(6);
+
+    }
+}
+
+.searchform #search_qtype_label {
+    //display: none;
+    @extend .input-group;
+    select {
+        width: rem-calc(100);
+    }
+    input [type="search"] {
+        border-radius: 0px;
+    } 
+input#search {
+    border-radius: 0px;
+    background: #fff;
+}
+
+input.searchbutton {
+    border-radius: 0 3px 3px 0;
+}
+}

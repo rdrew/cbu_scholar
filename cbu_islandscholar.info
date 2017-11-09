@@ -1,0 +1,34 @@
+name = cbu_islandscholar
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = dist/assets/css/app.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = dist/assets/js/app.js
+
+; ========================================
+; FOAD
+; ========================================
+stylesheets[all][] = system.menus.theme.css
+stylesheets[all][] = system.theme.css
+stylesheets[all][] = system.messages.theme.css
+
+; ========================================
+; Regions
+; ========================================
+regions[header]         = Header
+regions[highlighted]    = Highlighted
+regions[help]           = Help
+regions[content]        = Content
+regions[sidebar]        = Sidebar
+regions[above-footer]         = Above Footer
+regions[footer]         = Footer

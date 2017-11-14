@@ -1,0 +1,35 @@
+footer {
+    background-color:$footer-bg;
+}
+
+.l-region--footer {
+    @include xy-grid-container;
+    @include top-bar-container;
+    background-color: $footer-bg !important;
+}
+
+.copyright-block, %copyright-block {
+    @include flex-align(left);
+    display:none;
+}
+
+.social-media-menu, %social-media-menu {
+    display:block;
+    @include flex-align(right);
+    ul {
+        background: $footer-bg;
+    }
+    &__link {
+    }
+}
+
+/*
+ * There be dragons...
+ */
+    .block-block-4 {
+        @extend %copyright-block;
+    }
+    .block--menu-menu-social-media-links {
+        @extend %social-media-menu;
+    }
+

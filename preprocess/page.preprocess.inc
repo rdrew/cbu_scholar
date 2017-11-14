@@ -3,7 +3,9 @@
 /**
  * Implements hook_preprocess_page().
  */
-function roblib_2017_preprocess_page(&$variables) {
-  // You can use preprocess hooks to modify the variables before they are passed
-  // to the theme function or template file.
+function cbu_scholar_preprocess_page(&$variables) {
+    // You can use preprocess hooks to modify the variables before they are passed
+    //drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
+    drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . file_create_url(path_to_theme()) . '" });', 'inline');
+    // to the theme function or template file.
 }

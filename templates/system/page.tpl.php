@@ -1,9 +1,13 @@
-<div class="l-page">
+<?php if ($page['sidebar']): ?>
+    <div class="l-page has-sidebar">
+<?php else: ?>
+    <div class="l-page">
+<?php endif; ?>
     <?php print render($page['header']); ?>
     <div class="l-main">
-        <div class="content grid-container l-content" role="main">
+        <div class="content l-content" role="main">
             <?php print render($page['highlighted']); ?>
-            <?php print $breadcrumb; ?>
+            <?php //print $breadcrumb; ?>
             <a id="main-content"></a>
             <?php print render($title_prefix); ?>
             <?php if ($title): ?>

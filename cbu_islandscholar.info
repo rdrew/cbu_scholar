@@ -32,3 +32,6 @@ regions[content]        = Content
 regions[sidebar]        = Sidebar
 regions[above-footer]         = Above Footer
 regions[footer]         = Footer
+regions[offCanvas]         = Off Canvas
+
+

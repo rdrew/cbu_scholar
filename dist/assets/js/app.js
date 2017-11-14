@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -14481,16 +14481,19 @@ var _foundationSites = __webpack_require__(21);
 
 var _foundationSites2 = _interopRequireDefault(_foundationSites);
 
+__webpack_require__(39);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.$ = _jquery2.default;
+//alert("this is from app.js");
 
+
+//$(document).foundation();
+window.$ = _jquery2.default;
 // If you want to pick and choose which modules to include, comment out the above and uncomment
 // the line below
 //import './lib/foundation-explicit-pieces';
-
-
-(0, _jquery2.default)(document).foundation();
+//import './cbu_custom';
 
 /***/ }),
 /* 21 */
@@ -22263,6 +22266,63 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 /***/ }),
 /* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function ($) {
+
+    Drupal.behaviors.socialMenu = {
+        attach: function attach(context, settings) {
+
+            var imagePath = '/sites/all/themes/cbu_islandscholar/dist/assets/img/';
+            var menuItems = [{ title: 'Twitter',
+                icon: 'twitter.svg' }, { title: 'Facebook',
+                icon: 'facebook.svg' }, { title: 'Instagram',
+                icon: 'instagram.svg' }, { title: 'Linkedin',
+                icon: 'linkedin.svg' }, { title: 'Youtube',
+                icon: 'youtube.svg' }, { title: 'Snapchat',
+                icon: 'twitter.svg' }];
+
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = menuItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var menuItem = _step.value;
+
+                    $('.menu a[title="' + menuItem.title + '"]').empty().append('<img src="' + imagePath + menuItem.icon + '">');
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            ;
+
+            //let menuItemTitle = "Twitter";
+            //let icon = 'twitter.svg';
+
+            //$(  '.menu a[title="' + menuItemTitle +  '"]' ).empty().append( '<img src="' + imagePath + icon + '">');
+
+        }
+    };
+})(jQuery);
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(20);

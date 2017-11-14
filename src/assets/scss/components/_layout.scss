@@ -1,3 +1,28 @@
+/*
+ *sidebar layout and behavior
+ */
+.l-main {
+    //@include xy-grid-container;
+}
+.has-sidebar .l-main {
+    @include xy-grid-container;
+    @include breakpoint(large) {
+        @include xy-grid;
+        .l-content {
+            @include xy-cell(9);
+            order:2;
+        }
+        .l-region--sidebar {
+            @include xy-cell(3);
+            order:1;
+            margin-top:rem-calc(80);
+        }
+    }
+}
+
+
+
+
 #Showcase {
     margin-bottom:$global-margin*2;
 }
@@ -5,12 +30,6 @@
 
     margin-bottom:$global-margin*2;
     margin-top:$global-margin*2;
-}
-.default-layout, .sidebar-layout {
-    .content {
-
-    margin-top:$global-margin*5;
-    }
 }
 .above-footer {
 

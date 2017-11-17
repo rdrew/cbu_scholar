@@ -22276,7 +22276,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     Drupal.behaviors.socialMenu = {
         attach: function attach(context, settings) {
 
-            var imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
+            //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
+            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
             var menuItems = [{ title: 'Twitter',
                 icon: 'twitter.svg' }, { title: 'Facebook',
                 icon: 'facebook.svg' }, { title: 'Instagram',

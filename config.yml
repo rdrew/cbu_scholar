@@ -1,7 +1,8 @@
 # Your project's server will run on localhost:xxxx at this port
-THEMENAME: "cbu_islandscholar"
+THEMENAME: "cbu_scholar"
 PORT: 8000
-PROXY: "http://drupal7.dev/"
+LOCALPROXY: "http://drupal7.dev/"
+REMOTEPROXY: "cbufaces.cairnrepo.org"
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:

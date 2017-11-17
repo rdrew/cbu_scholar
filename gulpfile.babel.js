@@ -20,7 +20,7 @@ const $ = plugins();
 const PRODUCTION = !!(yargs.argv.production);
 
 // Load settings from settings.yml
-const { THEMENAME, COMPATIBILITY, PORT, PROXY, UNCSS_OPTIONS, PATHS } = loadConfig();
+const { THEMENAME, COMPATIBILITY, PORT, REMOTEPROXY, LOCALPROXY, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
@@ -139,7 +139,7 @@ function images() {
 function server(done) {
     browser.init({
         //server: PATHS.dist, port: PORT
-        proxy         : PROXY,
+        proxy         : LOCALPROXY,
         port          : PORT,
         injectChanges : true
     });
@@ -155,7 +155,7 @@ function serverRemote(done) {
 
     browser.init({
 
-        proxy: PROXY,
+        proxy: REMOTEPROXY,
         serveStatic: ["dist/assets"],
         files: "dist/assets/css/app.css",
         rewriteRules: [

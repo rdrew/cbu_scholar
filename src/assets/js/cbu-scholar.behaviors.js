@@ -4,7 +4,7 @@
     Drupal.behaviors.socialMenu = {
         attach: function (context, settings) {
 
-            const imagePath = '/sites/all/themes/cbu_islandscholar/dist/assets/img/';
+            const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
             var menuItems= [
                 { title  : 'Twitter',
                     icon : 'twitter.svg' },

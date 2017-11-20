@@ -79,7 +79,6 @@
  */
 //dpm($content);
 $menu = menu_navigation_links('main-menu');
-$search = module_invoke('search', 'block_view', 'form');
 $is_search = module_invoke('islandora_solr', 'block_view', 'simple');
 ?>
 <div id="Showcase">
@@ -92,7 +91,6 @@ print render($content['field_cbu_slideshow']);
          <!-- slideshow -->
          <div class="showcase-top">
              <h1 class="site-title">Search <span class="yellow">FACE</span></h1>
-<?php print render($search['content']); ?>
 <?php print render($is_search['content']); ?>
          </div>
          <div class="showcase-bottom">

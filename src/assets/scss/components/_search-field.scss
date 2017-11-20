@@ -1,0 +1,33 @@
+.islandora-simple-search,
+%islandora-simple-search {
+
+    &__container {
+        @extend .input-group;
+    }
+    &__text-field {
+        @extend .input-group-field;
+    }
+    &__submit-button {
+        @extend .input-group-button;
+        @extend .button;
+    }
+}
+//################################
+.form-item-islandora-simple-search-query {
+    width:100%;
+}
+#islandora-solr-simple-search-form--2 .form-wrapper {
+    @extend %islandora-simple-search__container;
+    label {
+        display:none
+    }
+} 
+#islandora-solr-simple-search-form--2 .form-text {
+    @extend %islandora-simple-search__text-field;
+} 
+#islandora-solr-simple-search-form--2 .form-submit {
+    @extend %islandora-simple-search__submit-button;
+} 
+
+
+

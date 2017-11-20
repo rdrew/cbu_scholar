@@ -1,8 +1,8 @@
 /*
  *sidebar layout and behavior
  */
-.l-main {
-    //@include xy-grid-container;
+body:not(.front) .l-main {
+    @include xy-grid-container;
 }
 .has-sidebar .l-main {
     @include xy-grid-container;

@@ -2,7 +2,7 @@
 THEMENAME: "cbu_scholar"
 PORT: 8000
 LOCALPROXY: "http://drupal7.dev/"
-REMOTEPROXY: "cbufaces.cairnrepo.org"
+REMOTEPROXY: "https://cbufaces.cairnrepo.org"
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:

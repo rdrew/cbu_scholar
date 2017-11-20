@@ -2,9 +2,6 @@
     background: $topbar-background;
 }
 
-.logo-wrapper {
-}
-
 .grid-container.top-bar {
     position: relative;
 }
@@ -13,9 +10,6 @@ $logo-width: 140px;
     position: absolute;
     top: 0;
     left: 0;
-    //width: 15.97%;
-    //max-width: 220px;
-    //max-width: 22rem;
     width: rem-calc($logo-width);
     z-index: 60;
 }
@@ -26,9 +20,6 @@ $logo-width: 140px;
 }
 
 //mobile menu
-.navbar-menu {
-    @include show-for(large);
-}
 .mobile-menu__button {
     //@include hide-for(large);
     float: right;
@@ -37,8 +28,12 @@ $logo-width: 140px;
     }
     //text-indent: right;
 }
+.front .top-bar .main-menu {
+    display:none;
+}
 .top-bar .main-menu {
     margin-left: $logo-width;
+    @include show-for(large);
 }
 #block-system-user-menu {
     @include show-for(large);
@@ -49,3 +44,5 @@ $logo-width: 140px;
 
 
 }
+
+

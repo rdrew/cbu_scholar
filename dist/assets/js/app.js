@@ -22277,8 +22277,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         attach: function attach(context, settings) {
 
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
-            var menuItems = [{ title: 'Twitter',
+            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img';
+            var menuItems = [{ title: 'bookmarks',
+                icon: 'twitter.svg' }, { title: 'Twitter',
                 icon: 'twitter.svg' }, { title: 'Facebook',
                 icon: 'facebook.svg' }, { title: 'Instagram',
                 icon: 'instagram.svg' }, { title: 'Linkedin',
@@ -22312,12 +22313,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
 
             ;
-
-            //let menuItemTitle = "Twitter";
-            //let icon = 'twitter.svg';
-
-            //$(  '.menu a[title="' + menuItemTitle +  '"]' ).empty().append( '<img src="' + imagePath + icon + '">');
-
         }
     };
 })(jQuery);

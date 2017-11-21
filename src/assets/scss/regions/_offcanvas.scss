@@ -1,5 +1,7 @@
 //menu
 
+
+
 $list-group-background: $white;
 $list-group-active-background: $primary-color;
 $list-group-hover-background: $light-gray;
@@ -64,4 +66,13 @@ $list-group-margin: $global-margin;
 .mobile-menu ul {
     margin:0px;
     margin-top:3rem;
+}
+
+#offCanvas .menu {
+    @extend .vertical;
+    @extend .list-group;
+    a {
+        @extend .list-group-item;
+        
+    }
 }

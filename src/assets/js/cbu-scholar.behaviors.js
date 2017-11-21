@@ -5,8 +5,11 @@
         attach: function (context, settings) {
 
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-            const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
+            const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img';
             var menuItems= [
+                { title  : 'bookmarks',
+                    icon : 'twitter.svg' },
+
                 { title  : 'Twitter',
                     icon : 'twitter.svg' },
 
@@ -31,14 +34,6 @@
                     .empty()
                     .append( '<img src="' + imagePath + menuItem.icon + '">');
             };
-
-
-
-            //let menuItemTitle = "Twitter";
-            //let icon = 'twitter.svg';
-
-            //$(  '.menu a[title="' + menuItemTitle +  '"]' ).empty().append( '<img src="' + imagePath + icon + '">');
-
 
         }
     };

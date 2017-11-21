@@ -1,7 +1,7 @@
 <div class="l-page">
     <?php print render($page['header']); ?>
     <div class="l-main">
-        <?php print $messages; ?>
+        <?php //print $messages; ?>
         <?php print render($page['content']); ?>
     </div>
     <!-- above footer -->

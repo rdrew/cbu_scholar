@@ -5,7 +5,7 @@ $menu = menu_navigation_links('main-menu');
     <div class="grid-container top-bar">
         <div class="top-bar-left">
             <div class="logo-wrapper">
-                <a class="site-logo" href="%3C?php%20print%20$front_page;%20?%3E" rel="home" title="<?php print t('Home'); ?>"><svg class="logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
+                <a class="site-logo" href="<?php print $frontpage; ?>" rel="home" title="<?php print t('Home'); ?>"><svg class="logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
                 <polygon class="logo__bg-back" fill="#F89624" points="188,175.536 90.504,161.325 0,175.536 0,0 188,0"></polygon>
                 <polygon class="logo__bg-front" fill="#DD6E26" points="188,171.049 90.504,156.838 0,171.049 0,0 188,0"></polygon>
                 <g class="logo__name">

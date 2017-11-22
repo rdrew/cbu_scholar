@@ -5,7 +5,7 @@
         attach: function (context, settings) {
 
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-            const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img';
+            const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
             var menuItems= [
                 { title  : 'bookmarks',
                     icon : 'twitter.svg' },

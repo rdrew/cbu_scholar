@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 /*!
  * jQuery JavaScript Library v3.2.1
@@ -92,7 +90,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	"use strict";
 
-	if (( false ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
+	if (typeof module === "object" && typeof module.exports === "object") {
 
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
@@ -112,7 +110,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	}
 
 	// Pass this if window is not defined yet
-})(typeof window !== "undefined" ? window : undefined, function (window, noGlobal) {
+})(typeof window !== "undefined" ? window : this, function (window, noGlobal) {
 
 	// Edge <= 12 - 13+, Firefox <=18 - 45+, IE 10 - 11, Safari 5.1 - 9+, iOS 6 - 9.1
 	// throw exceptions when non-strict code (e.g., ASP.NET 4.5) accesses strict mode
@@ -126,7 +124,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	var getProto = Object.getPrototypeOf;
 
-	var _slice = arr.slice;
+	var slice = arr.slice;
 
 	var concat = arr.concat;
 
@@ -163,7 +161,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 	// Define a local copy of jQuery
-	jQuery = function jQuery(selector, context) {
+	jQuery = function (selector, context) {
 
 		// The jQuery object is actually just the init constructor 'enhanced'
 		// Need init if jQuery is called (just allow error to be thrown if not included)
@@ -182,7 +180,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 	// Used by jQuery.camelCase as callback to replace()
-	fcamelCase = function fcamelCase(all, letter) {
+	fcamelCase = function (all, letter) {
 		return letter.toUpperCase();
 	};
 
@@ -196,17 +194,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// The default length of a jQuery object is 0
 		length: 0,
 
-		toArray: function toArray() {
-			return _slice.call(this);
+		toArray: function () {
+			return slice.call(this);
 		},
 
 		// Get the Nth element in the matched element set OR
 		// Get the whole matched element set as a clean array
-		get: function get(num) {
+		get: function (num) {
 
 			// Return all the elements in a clean array
 			if (num == null) {
-				return _slice.call(this);
+				return slice.call(this);
 			}
 
 			// Return just the one element from the set
@@ -215,7 +213,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		// Take an array of elements and push it onto the stack
 		// (returning the new matched element set)
-		pushStack: function pushStack(elems) {
+		pushStack: function (elems) {
 
 			// Build a new jQuery matched element set
 			var ret = jQuery.merge(this.constructor(), elems);
@@ -228,35 +226,35 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Execute a callback for every element in the matched set.
-		each: function each(callback) {
+		each: function (callback) {
 			return jQuery.each(this, callback);
 		},
 
-		map: function map(callback) {
+		map: function (callback) {
 			return this.pushStack(jQuery.map(this, function (elem, i) {
 				return callback.call(elem, i, elem);
 			}));
 		},
 
-		slice: function slice() {
-			return this.pushStack(_slice.apply(this, arguments));
+		slice: function () {
+			return this.pushStack(slice.apply(this, arguments));
 		},
 
-		first: function first() {
+		first: function () {
 			return this.eq(0);
 		},
 
-		last: function last() {
+		last: function () {
 			return this.eq(-1);
 		},
 
-		eq: function eq(i) {
+		eq: function (i) {
 			var len = this.length,
 			    j = +i + (i < 0 ? len : 0);
 			return this.pushStack(j >= 0 && j < len ? [this[j]] : []);
 		},
 
-		end: function end() {
+		end: function () {
 			return this.prevObject || this.constructor();
 		},
 
@@ -289,7 +287,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		}
 
 		// Handle case when target is a string or something (possible in deep copy)
-		if ((typeof target === "undefined" ? "undefined" : _typeof(target)) !== "object" && !jQuery.isFunction(target)) {
+		if (typeof target !== "object" && !jQuery.isFunction(target)) {
 			target = {};
 		}
 
@@ -347,21 +345,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// Assume jQuery is ready without the ready module
 		isReady: true,
 
-		error: function error(msg) {
+		error: function (msg) {
 			throw new Error(msg);
 		},
 
-		noop: function noop() {},
+		noop: function () {},
 
-		isFunction: function isFunction(obj) {
+		isFunction: function (obj) {
 			return jQuery.type(obj) === "function";
 		},
 
-		isWindow: function isWindow(obj) {
+		isWindow: function (obj) {
 			return obj != null && obj === obj.window;
 		},
 
-		isNumeric: function isNumeric(obj) {
+		isNumeric: function (obj) {
 
 			// As of jQuery 3.0, isNumeric is limited to
 			// strings and numbers (primitives or objects)
@@ -375,7 +373,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			!isNaN(obj - parseFloat(obj));
 		},
 
-		isPlainObject: function isPlainObject(obj) {
+		isPlainObject: function (obj) {
 			var proto, Ctor;
 
 			// Detect obvious negatives
@@ -396,7 +394,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return typeof Ctor === "function" && fnToString.call(Ctor) === ObjectFunctionString;
 		},
 
-		isEmptyObject: function isEmptyObject(obj) {
+		isEmptyObject: function (obj) {
 
 			/* eslint-disable no-unused-vars */
 			// See https://github.com/eslint/eslint/issues/6125
@@ -408,28 +406,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return true;
 		},
 
-		type: function type(obj) {
+		type: function (obj) {
 			if (obj == null) {
 				return obj + "";
 			}
 
 			// Support: Android <=2.3 only (functionish RegExp)
-			return (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object" || typeof obj === "function" ? class2type[toString.call(obj)] || "object" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+			return typeof obj === "object" || typeof obj === "function" ? class2type[toString.call(obj)] || "object" : typeof obj;
 		},
 
 		// Evaluates a script in a global context
-		globalEval: function globalEval(code) {
+		globalEval: function (code) {
 			DOMEval(code);
 		},
 
 		// Convert dashed to camelCase; used by the css and data modules
 		// Support: IE <=9 - 11, Edge 12 - 13
 		// Microsoft forgot to hump their vendor prefix (#9572)
-		camelCase: function camelCase(string) {
+		camelCase: function (string) {
 			return string.replace(rmsPrefix, "ms-").replace(rdashAlpha, fcamelCase);
 		},
 
-		each: function each(obj, callback) {
+		each: function (obj, callback) {
 			var length,
 			    i = 0;
 
@@ -452,12 +450,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Support: Android <=4.0 only
-		trim: function trim(text) {
+		trim: function (text) {
 			return text == null ? "" : (text + "").replace(rtrim, "");
 		},
 
 		// results is for internal usage only
-		makeArray: function makeArray(arr, results) {
+		makeArray: function (arr, results) {
 			var ret = results || [];
 
 			if (arr != null) {
@@ -471,13 +469,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return ret;
 		},
 
-		inArray: function inArray(elem, arr, i) {
+		inArray: function (elem, arr, i) {
 			return arr == null ? -1 : indexOf.call(arr, elem, i);
 		},
 
 		// Support: Android <=4.0 only, PhantomJS 1 only
 		// push.apply(_, arraylike) throws on ancient WebKit
-		merge: function merge(first, second) {
+		merge: function (first, second) {
 			var len = +second.length,
 			    j = 0,
 			    i = first.length;
@@ -491,7 +489,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return first;
 		},
 
-		grep: function grep(elems, callback, invert) {
+		grep: function (elems, callback, invert) {
 			var callbackInverse,
 			    matches = [],
 			    i = 0,
@@ -511,7 +509,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// arg is for internal usage only
-		map: function map(elems, callback, arg) {
+		map: function (elems, callback, arg) {
 			var length,
 			    value,
 			    i = 0,
@@ -548,7 +546,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		// Bind a function to a context, optionally partially applying any
 		// arguments.
-		proxy: function proxy(fn, context) {
+		proxy: function (fn, context) {
 			var tmp, args, proxy;
 
 			if (typeof context === "string") {
@@ -564,9 +562,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 
 			// Simulated bind
-			args = _slice.call(arguments, 2);
-			proxy = function proxy() {
-				return fn.apply(context || this, args.concat(_slice.call(arguments)));
+			args = slice.call(arguments, 2);
+			proxy = function () {
+				return fn.apply(context || this, args.concat(slice.call(arguments)));
 			};
 
 			// Set the guid of unique handler to the same of original handler, so it can be removed
@@ -651,7 +649,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		    classCache = createCache(),
 		    tokenCache = createCache(),
 		    compilerCache = createCache(),
-		    sortOrder = function sortOrder(a, b) {
+		    sortOrder = function (a, b) {
 			if (a === b) {
 				hasDuplicate = true;
 			}
@@ -669,7 +667,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		// Use a stripped-down indexOf as it's faster than native
 		// https://jsperf.com/thor-indexof-vs-for/5
-		indexOf = function indexOf(list, elem) {
+		indexOf = function (list, elem) {
 			var i = 0,
 			    len = list.length;
 			for (; i < len; i++) {
@@ -741,7 +739,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// CSS escapes
 		// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 		runescape = new RegExp("\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig"),
-		    funescape = function funescape(_, escaped, escapedWhitespace) {
+		    funescape = function (_, escaped, escapedWhitespace) {
 			var high = "0x" + escaped - 0x10000;
 			// NaN means non-codepoint
 			// Support: Firefox<24
@@ -757,7 +755,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// CSS string/identifier serialization
 		// https://drafts.csswg.org/cssom/#common-serializing-idioms
 		rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
-		    fcssescape = function fcssescape(ch, asCodePoint) {
+		    fcssescape = function (ch, asCodePoint) {
 			if (asCodePoint) {
 
 				// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
@@ -778,7 +776,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// See setDocument()
 		// Removing the function wrapper causes a "Permission Denied"
 		// error in IE
-		unloadHandler = function unloadHandler() {
+		unloadHandler = function () {
 			setDocument();
 		},
 		    disabledAncestor = addCombinator(function (elem) {
@@ -1686,7 +1684,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			},
 
 			preFilter: {
-				"ATTR": function ATTR(match) {
+				"ATTR": function (match) {
 					match[1] = match[1].replace(runescape, funescape);
 
 					// Move the given value to match[3] whether quoted or unquoted
@@ -1699,7 +1697,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return match.slice(0, 4);
 				},
 
-				"CHILD": function CHILD(match) {
+				"CHILD": function (match) {
 					/* matches from matchExpr["CHILD"]
      	1 type (only|nth|...)
      	2 what (child|of-type)
@@ -1731,7 +1729,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return match;
 				},
 
-				"PSEUDO": function PSEUDO(match) {
+				"PSEUDO": function (match) {
 					var excess,
 					    unquoted = !match[6] && match[2];
 
@@ -1762,7 +1760,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			filter: {
 
-				"TAG": function TAG(nodeNameSelector) {
+				"TAG": function (nodeNameSelector) {
 					var nodeName = nodeNameSelector.replace(runescape, funescape).toLowerCase();
 					return nodeNameSelector === "*" ? function () {
 						return true;
@@ -1771,7 +1769,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					};
 				},
 
-				"CLASS": function CLASS(className) {
+				"CLASS": function (className) {
 					var pattern = classCache[className + " "];
 
 					return pattern || (pattern = new RegExp("(^|" + whitespace + ")" + className + "(" + whitespace + "|$)")) && classCache(className, function (elem) {
@@ -1779,7 +1777,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					});
 				},
 
-				"ATTR": function ATTR(name, operator, check) {
+				"ATTR": function (name, operator, check) {
 					return function (elem) {
 						var result = Sizzle.attr(elem, name);
 
@@ -1796,7 +1794,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					};
 				},
 
-				"CHILD": function CHILD(type, what, argument, first, last) {
+				"CHILD": function (type, what, argument, first, last) {
 					var simple = type.slice(0, 3) !== "nth",
 					    forward = type.slice(-4) !== "last",
 					    ofType = what === "of-type";
@@ -1918,7 +1916,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					};
 				},
 
-				"PSEUDO": function PSEUDO(pseudo, argument) {
+				"PSEUDO": function (pseudo, argument) {
 					// pseudo-class names are case-insensitive
 					// http://www.w3.org/TR/selectors/#pseudo-classes
 					// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
@@ -2023,16 +2021,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}),
 
 				// Miscellaneous
-				"target": function target(elem) {
+				"target": function (elem) {
 					var hash = window.location && window.location.hash;
 					return hash && hash.slice(1) === elem.id;
 				},
 
-				"root": function root(elem) {
+				"root": function (elem) {
 					return elem === docElem;
 				},
 
-				"focus": function focus(elem) {
+				"focus": function (elem) {
 					return elem === document.activeElement && (!document.hasFocus || document.hasFocus()) && !!(elem.type || elem.href || ~elem.tabIndex);
 				},
 
@@ -2040,14 +2038,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				"enabled": createDisabledPseudo(false),
 				"disabled": createDisabledPseudo(true),
 
-				"checked": function checked(elem) {
+				"checked": function (elem) {
 					// In CSS3, :checked should return both checked and selected elements
 					// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 					var nodeName = elem.nodeName.toLowerCase();
 					return nodeName === "input" && !!elem.checked || nodeName === "option" && !!elem.selected;
 				},
 
-				"selected": function selected(elem) {
+				"selected": function (elem) {
 					// Accessing this property makes selected-by-default
 					// options in Safari work properly
 					if (elem.parentNode) {
@@ -2058,7 +2056,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				},
 
 				// Contents
-				"empty": function empty(elem) {
+				"empty": function (elem) {
 					// http://www.w3.org/TR/selectors/#empty-pseudo
 					// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 					//   but not by others (comment: 8; processing instruction: 7; etc.)
@@ -2071,25 +2069,25 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return true;
 				},
 
-				"parent": function parent(elem) {
+				"parent": function (elem) {
 					return !Expr.pseudos["empty"](elem);
 				},
 
 				// Element/input types
-				"header": function header(elem) {
+				"header": function (elem) {
 					return rheader.test(elem.nodeName);
 				},
 
-				"input": function input(elem) {
+				"input": function (elem) {
 					return rinputs.test(elem.nodeName);
 				},
 
-				"button": function button(elem) {
+				"button": function (elem) {
 					var name = elem.nodeName.toLowerCase();
 					return name === "input" && elem.type === "button" || name === "button";
 				},
 
-				"text": function text(elem) {
+				"text": function (elem) {
 					var attr;
 					return elem.nodeName.toLowerCase() === "input" && elem.type === "text" && (
 
@@ -2486,7 +2484,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		function matcherFromGroupMatchers(elementMatchers, setMatchers) {
 			var bySet = setMatchers.length > 0,
 			    byElement = elementMatchers.length > 0,
-			    superMatcher = function superMatcher(seed, context, xml, results, outermost) {
+			    superMatcher = function (seed, context, xml, results, outermost) {
 				var elem,
 				    j,
 				    matcher,
@@ -2772,11 +2770,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	jQuery.contains = Sizzle.contains;
 	jQuery.escapeSelector = Sizzle.escape;
 
-	var dir = function dir(elem, _dir, until) {
+	var dir = function (elem, dir, until) {
 		var matched = [],
 		    truncate = until !== undefined;
 
-		while ((elem = elem[_dir]) && elem.nodeType !== 9) {
+		while ((elem = elem[dir]) && elem.nodeType !== 9) {
 			if (elem.nodeType === 1) {
 				if (truncate && jQuery(elem).is(until)) {
 					break;
@@ -2787,7 +2785,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		return matched;
 	};
 
-	var _siblings = function _siblings(n, elem) {
+	var siblings = function (n, elem) {
 		var matched = [];
 
 		for (; n; n = n.nextSibling) {
@@ -2860,7 +2858,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.fn.extend({
-		find: function find(selector) {
+		find: function (selector) {
 			var i,
 			    ret,
 			    len = this.length,
@@ -2884,13 +2882,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			return len > 1 ? jQuery.uniqueSort(ret) : ret;
 		},
-		filter: function filter(selector) {
+		filter: function (selector) {
 			return this.pushStack(winnow(this, selector || [], false));
 		},
-		not: function not(selector) {
+		not: function (selector) {
 			return this.pushStack(winnow(this, selector || [], true));
 		},
-		is: function is(selector) {
+		is: function (selector) {
 			return !!winnow(this,
 
 			// If this is a positional/relative selector, check membership in the returned set
@@ -3020,7 +3018,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.fn.extend({
-		has: function has(target) {
+		has: function (target) {
 			var targets = jQuery(target, this),
 			    l = targets.length;
 
@@ -3034,7 +3032,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		closest: function closest(selectors, context) {
+		closest: function (selectors, context) {
 			var cur,
 			    i = 0,
 			    l = this.length,
@@ -3063,7 +3061,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Determine the position of an element within the set
-		index: function index(elem) {
+		index: function (elem) {
 
 			// No argument, return index in parent
 			if (!elem) {
@@ -3082,11 +3080,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			elem.jquery ? elem[0] : elem);
 		},
 
-		add: function add(selector, context) {
+		add: function (selector, context) {
 			return this.pushStack(jQuery.uniqueSort(jQuery.merge(this.get(), jQuery(selector, context))));
 		},
 
-		addBack: function addBack(selector) {
+		addBack: function (selector) {
 			return this.add(selector == null ? this.prevObject : this.prevObject.filter(selector));
 		}
 	});
@@ -3097,41 +3095,41 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	}
 
 	jQuery.each({
-		parent: function parent(elem) {
+		parent: function (elem) {
 			var parent = elem.parentNode;
 			return parent && parent.nodeType !== 11 ? parent : null;
 		},
-		parents: function parents(elem) {
+		parents: function (elem) {
 			return dir(elem, "parentNode");
 		},
-		parentsUntil: function parentsUntil(elem, i, until) {
+		parentsUntil: function (elem, i, until) {
 			return dir(elem, "parentNode", until);
 		},
-		next: function next(elem) {
+		next: function (elem) {
 			return sibling(elem, "nextSibling");
 		},
-		prev: function prev(elem) {
+		prev: function (elem) {
 			return sibling(elem, "previousSibling");
 		},
-		nextAll: function nextAll(elem) {
+		nextAll: function (elem) {
 			return dir(elem, "nextSibling");
 		},
-		prevAll: function prevAll(elem) {
+		prevAll: function (elem) {
 			return dir(elem, "previousSibling");
 		},
-		nextUntil: function nextUntil(elem, i, until) {
+		nextUntil: function (elem, i, until) {
 			return dir(elem, "nextSibling", until);
 		},
-		prevUntil: function prevUntil(elem, i, until) {
+		prevUntil: function (elem, i, until) {
 			return dir(elem, "previousSibling", until);
 		},
-		siblings: function siblings(elem) {
-			return _siblings((elem.parentNode || {}).firstChild, elem);
+		siblings: function (elem) {
+			return siblings((elem.parentNode || {}).firstChild, elem);
 		},
-		children: function children(elem) {
-			return _siblings(elem.firstChild);
+		children: function (elem) {
+			return siblings(elem.firstChild);
 		},
-		contents: function contents(elem) {
+		contents: function (elem) {
 			if (nodeName(elem, "iframe")) {
 				return elem.contentDocument;
 			}
@@ -3221,11 +3219,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 		// Flag to know if list was already fired
-		_fired,
+		fired,
 
 
 		// Flag to prevent firing
-		_locked,
+		locked,
 
 
 		// Actual callback list
@@ -3241,14 +3239,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 		// Fire callbacks
-		fire = function fire() {
+		fire = function () {
 
 			// Enforce single-firing
-			_locked = _locked || options.once;
+			locked = locked || options.once;
 
 			// Execute callbacks for all pending executions,
 			// respecting firingIndex overrides and runtime changes
-			_fired = firing = true;
+			fired = firing = true;
 			for (; queue.length; firingIndex = -1) {
 				memory = queue.shift();
 				while (++firingIndex < list.length) {
@@ -3271,7 +3269,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			firing = false;
 
 			// Clean up if we're done firing for good
-			if (_locked) {
+			if (locked) {
 
 				// Keep an empty list if we have data for future add calls
 				if (memory) {
@@ -3289,7 +3287,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		self = {
 
 			// Add a callback or a collection of callbacks to the list
-			add: function add() {
+			add: function () {
 				if (list) {
 
 					// If we have memory from a past run, we should fire after adding
@@ -3320,7 +3318,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			},
 
 			// Remove a callback from the list
-			remove: function remove() {
+			remove: function () {
 				jQuery.each(arguments, function (_, arg) {
 					var index;
 					while ((index = jQuery.inArray(arg, list, index)) > -1) {
@@ -3337,12 +3335,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			// Check if a given callback is in the list.
 			// If no argument is given, return whether or not list has callbacks attached.
-			has: function has(fn) {
+			has: function (fn) {
 				return fn ? jQuery.inArray(fn, list) > -1 : list.length > 0;
 			},
 
 			// Remove all callbacks from the list
-			empty: function empty() {
+			empty: function () {
 				if (list) {
 					list = [];
 				}
@@ -3352,32 +3350,32 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			// Disable .fire and .add
 			// Abort any current/pending executions
 			// Clear all callbacks and values
-			disable: function disable() {
-				_locked = queue = [];
+			disable: function () {
+				locked = queue = [];
 				list = memory = "";
 				return this;
 			},
-			disabled: function disabled() {
+			disabled: function () {
 				return !list;
 			},
 
 			// Disable .fire
 			// Also disable .add unless we have memory (since it would have no effect)
 			// Abort any pending executions
-			lock: function lock() {
-				_locked = queue = [];
+			lock: function () {
+				locked = queue = [];
 				if (!memory && !firing) {
 					list = memory = "";
 				}
 				return this;
 			},
-			locked: function locked() {
-				return !!_locked;
+			locked: function () {
+				return !!locked;
 			},
 
 			// Call all callbacks with the given context and arguments
-			fireWith: function fireWith(context, args) {
-				if (!_locked) {
+			fireWith: function (context, args) {
+				if (!locked) {
 					args = args || [];
 					args = [context, args.slice ? args.slice() : args];
 					queue.push(args);
@@ -3389,14 +3387,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			},
 
 			// Call all the callbacks with the given arguments
-			fire: function fire() {
+			fire: function () {
 				self.fireWith(this, arguments);
 				return this;
 			},
 
 			// To know if the callbacks have already been called at least once
-			fired: function fired() {
-				return !!_fired;
+			fired: function () {
+				return !!fired;
 			}
 		};
 
@@ -3445,27 +3443,27 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	jQuery.extend({
 
-		Deferred: function Deferred(func) {
+		Deferred: function (func) {
 			var tuples = [
 
 			// action, add listener, callbacks,
 			// ... .then handlers, argument index, [final state]
 			["notify", "progress", jQuery.Callbacks("memory"), jQuery.Callbacks("memory"), 2], ["resolve", "done", jQuery.Callbacks("once memory"), jQuery.Callbacks("once memory"), 0, "resolved"], ["reject", "fail", jQuery.Callbacks("once memory"), jQuery.Callbacks("once memory"), 1, "rejected"]],
-			    _state = "pending",
-			    _promise = {
-				state: function state() {
-					return _state;
+			    state = "pending",
+			    promise = {
+				state: function () {
+					return state;
 				},
-				always: function always() {
+				always: function () {
 					deferred.done(arguments).fail(arguments);
 					return this;
 				},
-				"catch": function _catch(fn) {
-					return _promise.then(null, fn);
+				"catch": function (fn) {
+					return promise.then(null, fn);
 				},
 
 				// Keep pipe for back-compat
-				pipe: function pipe() /* fnDone, fnFail, fnProgress */{
+				pipe: function () /* fnDone, fnFail, fnProgress */{
 					var fns = arguments;
 
 					return jQuery.Deferred(function (newDefer) {
@@ -3489,13 +3487,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						fns = null;
 					}).promise();
 				},
-				then: function then(onFulfilled, onRejected, onProgress) {
+				then: function (onFulfilled, onRejected, onProgress) {
 					var maxDepth = 0;
 					function resolve(depth, deferred, handler, special) {
 						return function () {
 							var that = this,
 							    args = arguments,
-							    mightThrow = function mightThrow() {
+							    mightThrow = function () {
 								var returned, then;
 
 								// Support: Promises/A+ section 2.3.3.3.3
@@ -3522,7 +3520,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 								// Support: Promises/A+ section 2.3.4
 								// https://promisesaplus.com/#point-64
 								// Only check objects and functions for thenability
-								(typeof returned === "undefined" ? "undefined" : _typeof(returned)) === "object" || typeof returned === "function") && returned.then;
+								typeof returned === "object" || typeof returned === "function") && returned.then;
 
 								// Handle a returned thenable
 								if (jQuery.isFunction(then)) {
@@ -3617,8 +3615,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 				// Get a promise for this deferred
 				// If obj is provided, the promise aspect is added to the object
-				promise: function promise(obj) {
-					return obj != null ? jQuery.extend(obj, _promise) : _promise;
+				promise: function (obj) {
+					return obj != null ? jQuery.extend(obj, promise) : promise;
 				}
 			},
 			    deferred = {};
@@ -3631,7 +3629,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				// promise.progress = list.add
 				// promise.done = list.add
 				// promise.fail = list.add
-				_promise[tuple[1]] = list.add;
+				promise[tuple[1]] = list.add;
 
 				// Handle state
 				if (stateString) {
@@ -3639,7 +3637,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 						// state = "resolved" (i.e., fulfilled)
 						// state = "rejected"
-						_state = stateString;
+						state = stateString;
 					},
 
 					// rejected_callbacks.disable
@@ -3670,7 +3668,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 
 			// Make the deferred a promise
-			_promise.promise(deferred);
+			promise.promise(deferred);
 
 			// Call given func if any
 			if (func) {
@@ -3682,7 +3680,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Deferred helper
-		when: function when(singleValue) {
+		when: function (singleValue) {
 			var
 
 			// count of uncompleted subordinates
@@ -3695,7 +3693,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			// subordinate fulfillment data
 			resolveContexts = Array(i),
-			    resolveValues = _slice.call(arguments),
+			    resolveValues = slice.call(arguments),
 
 
 			// the master Deferred
@@ -3703,10 +3701,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 			// subordinate callback factory
-			updateFunc = function updateFunc(i) {
+			updateFunc = function (i) {
 				return function (value) {
 					resolveContexts[i] = this;
-					resolveValues[i] = arguments.length > 1 ? _slice.call(arguments) : value;
+					resolveValues[i] = arguments.length > 1 ? slice.call(arguments) : value;
 					if (! --remaining) {
 						master.resolveWith(resolveContexts, resolveValues);
 					}
@@ -3779,7 +3777,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		readyWait: 1,
 
 		// Handle when the DOM is ready
-		ready: function ready(wait) {
+		ready: function (wait) {
 
 			// Abort if there are pending holds or we're already ready
 			if (wait === true ? --jQuery.readyWait : jQuery.isReady) {
@@ -3827,7 +3825,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	// Multifunctional method to get and set values of a collection
 	// The value/s can optionally be executed if it's a function
-	var access = function access(elems, fn, key, value, chainable, emptyGet, raw) {
+	var access = function (elems, fn, key, value, chainable, emptyGet, raw) {
 		var i = 0,
 		    len = elems.length,
 		    bulk = key == null;
@@ -3857,7 +3855,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					// ...except when executing function values
 				} else {
 					bulk = fn;
-					fn = function fn(elem, key, value) {
+					fn = function (elem, key, value) {
 						return bulk.call(jQuery(elem), value);
 					};
 				}
@@ -3881,7 +3879,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		return len ? fn(elems[0], key) : emptyGet;
 	};
-	var acceptData = function acceptData(owner) {
+	var acceptData = function (owner) {
 
 		// Accepts only:
 		//  - Node
@@ -3900,7 +3898,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	Data.prototype = {
 
-		cache: function cache(owner) {
+		cache: function (owner) {
 
 			// Check if the owner object already has a cache
 			var value = owner[this.expando];
@@ -3933,7 +3931,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			return value;
 		},
-		set: function set(owner, data, value) {
+		set: function (owner, data, value) {
 			var prop,
 			    cache = this.cache(owner);
 
@@ -3952,13 +3950,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 			return cache;
 		},
-		get: function get(owner, key) {
+		get: function (owner, key) {
 			return key === undefined ? this.cache(owner) :
 
 			// Always use camelCase key (gh-2257)
 			owner[this.expando] && owner[this.expando][jQuery.camelCase(key)];
 		},
-		access: function access(owner, key, value) {
+		access: function (owner, key, value) {
 
 			// In cases where either:
 			//
@@ -3988,7 +3986,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			// return the expected data based on which path was taken[*]
 			return value !== undefined ? value : key;
 		},
-		remove: function remove(owner, key) {
+		remove: function (owner, key) {
 			var i,
 			    cache = owner[this.expando];
 
@@ -4033,7 +4031,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 			}
 		},
-		hasData: function hasData(owner) {
+		hasData: function (owner) {
 			var cache = owner[this.expando];
 			return cache !== undefined && !jQuery.isEmptyObject(cache);
 		}
@@ -4104,31 +4102,31 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	}
 
 	jQuery.extend({
-		hasData: function hasData(elem) {
+		hasData: function (elem) {
 			return dataUser.hasData(elem) || dataPriv.hasData(elem);
 		},
 
-		data: function data(elem, name, _data) {
-			return dataUser.access(elem, name, _data);
+		data: function (elem, name, data) {
+			return dataUser.access(elem, name, data);
 		},
 
-		removeData: function removeData(elem, name) {
+		removeData: function (elem, name) {
 			dataUser.remove(elem, name);
 		},
 
 		// TODO: Now that all calls to _data and _removeData have been replaced
 		// with direct calls to dataPriv methods, these can be deprecated.
-		_data: function _data(elem, name, data) {
+		_data: function (elem, name, data) {
 			return dataPriv.access(elem, name, data);
 		},
 
-		_removeData: function _removeData(elem, name) {
+		_removeData: function (elem, name) {
 			dataPriv.remove(elem, name);
 		}
 	});
 
 	jQuery.fn.extend({
-		data: function data(key, value) {
+		data: function (key, value) {
 			var i,
 			    name,
 			    data,
@@ -4162,7 +4160,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 
 			// Sets multiple values
-			if ((typeof key === "undefined" ? "undefined" : _typeof(key)) === "object") {
+			if (typeof key === "object") {
 				return this.each(function () {
 					dataUser.set(this, key);
 				});
@@ -4205,7 +4203,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}, null, value, arguments.length > 1, null, true);
 		},
 
-		removeData: function removeData(key) {
+		removeData: function (key) {
 			return this.each(function () {
 				dataUser.remove(this, key);
 			});
@@ -4213,7 +4211,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.extend({
-		queue: function queue(elem, type, data) {
+		queue: function (elem, type, data) {
 			var queue;
 
 			if (elem) {
@@ -4232,14 +4230,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 		},
 
-		dequeue: function dequeue(elem, type) {
+		dequeue: function (elem, type) {
 			type = type || "fx";
 
 			var queue = jQuery.queue(elem, type),
 			    startLength = queue.length,
 			    fn = queue.shift(),
 			    hooks = jQuery._queueHooks(elem, type),
-			    next = function next() {
+			    next = function () {
 				jQuery.dequeue(elem, type);
 			};
 
@@ -4268,7 +4266,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Not public - generate a queueHooks object, or return the current one
-		_queueHooks: function _queueHooks(elem, type) {
+		_queueHooks: function (elem, type) {
 			var key = type + "queueHooks";
 			return dataPriv.get(elem, key) || dataPriv.access(elem, key, {
 				empty: jQuery.Callbacks("once memory").add(function () {
@@ -4279,7 +4277,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.fn.extend({
-		queue: function queue(type, data) {
+		queue: function (type, data) {
 			var setter = 2;
 
 			if (typeof type !== "string") {
@@ -4303,24 +4301,24 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 			});
 		},
-		dequeue: function dequeue(type) {
+		dequeue: function (type) {
 			return this.each(function () {
 				jQuery.dequeue(this, type);
 			});
 		},
-		clearQueue: function clearQueue(type) {
+		clearQueue: function (type) {
 			return this.queue(type || "fx", []);
 		},
 
 		// Get a promise resolved when queues of a certain type
 		// are emptied (fx is the type by default)
-		promise: function promise(type, obj) {
+		promise: function (type, obj) {
 			var tmp,
 			    count = 1,
 			    defer = jQuery.Deferred(),
 			    elements = this,
 			    i = this.length,
-			    resolve = function resolve() {
+			    resolve = function () {
 				if (! --count) {
 					defer.resolveWith(elements, [elements]);
 				}
@@ -4349,7 +4347,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	var cssExpand = ["Top", "Right", "Bottom", "Left"];
 
-	var isHiddenWithinTree = function isHiddenWithinTree(elem, el) {
+	var isHiddenWithinTree = function (elem, el) {
 
 		// isHiddenWithinTree might be called from jQuery#filter function;
 		// in that case, element will be second argument
@@ -4365,7 +4363,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		jQuery.contains(elem.ownerDocument, elem) && jQuery.css(elem, "display") === "none";
 	};
 
-	var swap = function swap(elem, options, callback, args) {
+	var swap = function (elem, options, callback, args) {
 		var ret,
 		    name,
 		    old = {};
@@ -4517,13 +4515,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	}
 
 	jQuery.fn.extend({
-		show: function show() {
+		show: function () {
 			return showHide(this, true);
 		},
-		hide: function hide() {
+		hide: function () {
 			return showHide(this);
 		},
-		toggle: function toggle(state) {
+		toggle: function (state) {
 			if (typeof state === "boolean") {
 				return state ? this.show() : this.hide();
 			}
@@ -4739,11 +4737,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		} catch (err) {}
 	}
 
-	function _on(elem, types, selector, data, fn, one) {
+	function on(elem, types, selector, data, fn, one) {
 		var origFn, type;
 
 		// Types can be a map of types/handlers
-		if ((typeof types === "undefined" ? "undefined" : _typeof(types)) === "object") {
+		if (typeof types === "object") {
 
 			// ( types-Object, selector, data )
 			if (typeof selector !== "string") {
@@ -4753,7 +4751,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				selector = undefined;
 			}
 			for (type in types) {
-				_on(elem, type, selector, data, types[type], one);
+				on(elem, type, selector, data, types[type], one);
 			}
 			return elem;
 		}
@@ -4785,7 +4783,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		if (one === 1) {
 			origFn = fn;
-			fn = function fn(event) {
+			fn = function (event) {
 
 				// Can use an empty set, since event contains the info
 				jQuery().off(event);
@@ -4808,7 +4806,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		global: {},
 
-		add: function add(elem, types, handler, data, selector) {
+		add: function (elem, types, handler, data, selector) {
 
 			var handleObjIn,
 			    eventHandle,
@@ -4928,7 +4926,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Detach an event or set of events from an element
-		remove: function remove(elem, types, handler, selector, mappedTypes) {
+		remove: function (elem, types, handler, selector, mappedTypes) {
 
 			var j,
 			    origCount,
@@ -5003,7 +5001,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 		},
 
-		dispatch: function dispatch(nativeEvent) {
+		dispatch: function (nativeEvent) {
 
 			// Make a writable jQuery.Event from the native event object
 			var event = jQuery.event.fix(nativeEvent);
@@ -5070,14 +5068,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return event.result;
 		},
 
-		handlers: function handlers(event, _handlers) {
+		handlers: function (event, handlers) {
 			var i,
 			    handleObj,
 			    sel,
 			    matchedHandlers,
 			    matchedSelectors,
 			    handlerQueue = [],
-			    delegateCount = _handlers.delegateCount,
+			    delegateCount = handlers.delegateCount,
 			    cur = event.target;
 
 			// Find delegate handlers
@@ -5102,7 +5100,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						matchedHandlers = [];
 						matchedSelectors = {};
 						for (i = 0; i < delegateCount; i++) {
-							handleObj = _handlers[i];
+							handleObj = handlers[i];
 
 							// Don't conflict with Object.prototype properties (#13203)
 							sel = handleObj.selector + " ";
@@ -5123,14 +5121,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			// Add the remaining (directly-bound) handlers
 			cur = this;
-			if (delegateCount < _handlers.length) {
-				handlerQueue.push({ elem: cur, handlers: _handlers.slice(delegateCount) });
+			if (delegateCount < handlers.length) {
+				handlerQueue.push({ elem: cur, handlers: handlers.slice(delegateCount) });
 			}
 
 			return handlerQueue;
 		},
 
-		addProp: function addProp(name, hook) {
+		addProp: function (name, hook) {
 			Object.defineProperty(jQuery.Event.prototype, name, {
 				enumerable: true,
 				configurable: true,
@@ -5145,7 +5143,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 				},
 
-				set: function set(value) {
+				set: function (value) {
 					Object.defineProperty(this, name, {
 						enumerable: true,
 						configurable: true,
@@ -5156,7 +5154,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		fix: function fix(originalEvent) {
+		fix: function (originalEvent) {
 			return originalEvent[jQuery.expando] ? originalEvent : new jQuery.Event(originalEvent);
 		},
 
@@ -5169,7 +5167,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			focus: {
 
 				// Fire native event if possible so blur/focus sequence is correct
-				trigger: function trigger() {
+				trigger: function () {
 					if (this !== safeActiveElement() && this.focus) {
 						this.focus();
 						return false;
@@ -5178,7 +5176,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				delegateType: "focusin"
 			},
 			blur: {
-				trigger: function trigger() {
+				trigger: function () {
 					if (this === safeActiveElement() && this.blur) {
 						this.blur();
 						return false;
@@ -5189,7 +5187,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			click: {
 
 				// For checkbox, fire native event so checked state will be right
-				trigger: function trigger() {
+				trigger: function () {
 					if (this.type === "checkbox" && this.click && nodeName(this, "input")) {
 						this.click();
 						return false;
@@ -5197,13 +5195,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				},
 
 				// For cross-browser consistency, don't fire native .click() on links
-				_default: function _default(event) {
+				_default: function (event) {
 					return nodeName(event.target, "a");
 				}
 			},
 
 			beforeunload: {
-				postDispatch: function postDispatch(event) {
+				postDispatch: function (event) {
 
 					// Support: Firefox 20+
 					// Firefox doesn't alert if the returnValue field is not set.
@@ -5276,7 +5274,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		isImmediatePropagationStopped: returnFalse,
 		isSimulated: false,
 
-		preventDefault: function preventDefault() {
+		preventDefault: function () {
 			var e = this.originalEvent;
 
 			this.isDefaultPrevented = returnTrue;
@@ -5285,7 +5283,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				e.preventDefault();
 			}
 		},
-		stopPropagation: function stopPropagation() {
+		stopPropagation: function () {
 			var e = this.originalEvent;
 
 			this.isPropagationStopped = returnTrue;
@@ -5294,7 +5292,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				e.stopPropagation();
 			}
 		},
-		stopImmediatePropagation: function stopImmediatePropagation() {
+		stopImmediatePropagation: function () {
 			var e = this.originalEvent;
 
 			this.isImmediatePropagationStopped = returnTrue;
@@ -5339,7 +5337,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		toElement: true,
 		touches: true,
 
-		which: function which(event) {
+		which: function (event) {
 			var button = event.button;
 
 			// Add which for key events
@@ -5386,7 +5384,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			delegateType: fix,
 			bindType: fix,
 
-			handle: function handle(event) {
+			handle: function (event) {
 				var ret,
 				    target = this,
 				    related = event.relatedTarget,
@@ -5406,13 +5404,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	jQuery.fn.extend({
 
-		on: function on(types, selector, data, fn) {
-			return _on(this, types, selector, data, fn);
+		on: function (types, selector, data, fn) {
+			return on(this, types, selector, data, fn);
 		},
-		one: function one(types, selector, data, fn) {
-			return _on(this, types, selector, data, fn, 1);
+		one: function (types, selector, data, fn) {
+			return on(this, types, selector, data, fn, 1);
 		},
-		off: function off(types, selector, fn) {
+		off: function (types, selector, fn) {
 			var handleObj, type;
 			if (types && types.preventDefault && types.handleObj) {
 
@@ -5421,7 +5419,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				jQuery(types.delegateTarget).off(handleObj.namespace ? handleObj.origType + "." + handleObj.namespace : handleObj.origType, handleObj.selector, handleObj.handler);
 				return this;
 			}
-			if ((typeof types === "undefined" ? "undefined" : _typeof(types)) === "object") {
+			if (typeof types === "object") {
 
 				// ( types-object [, selector] )
 				for (type in types) {
@@ -5631,7 +5629,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		return collection;
 	}
 
-	function _remove(elem, selector, keepData) {
+	function remove(elem, selector, keepData) {
 		var node,
 		    nodes = selector ? jQuery.filter(selector, elem) : elem,
 		    i = 0;
@@ -5653,11 +5651,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	}
 
 	jQuery.extend({
-		htmlPrefilter: function htmlPrefilter(html) {
+		htmlPrefilter: function (html) {
 			return html.replace(rxhtmlTag, "<$1></$2>");
 		},
 
-		clone: function clone(elem, dataAndEvents, deepDataAndEvents) {
+		clone: function (elem, dataAndEvents, deepDataAndEvents) {
 			var i,
 			    l,
 			    srcElements,
@@ -5701,7 +5699,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return clone;
 		},
 
-		cleanData: function cleanData(elems) {
+		cleanData: function (elems) {
 			var data,
 			    elem,
 			    type,
@@ -5739,15 +5737,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.fn.extend({
-		detach: function detach(selector) {
-			return _remove(this, selector, true);
+		detach: function (selector) {
+			return remove(this, selector, true);
 		},
 
-		remove: function remove(selector) {
-			return _remove(this, selector);
+		remove: function (selector) {
+			return remove(this, selector);
 		},
 
-		text: function text(value) {
+		text: function (value) {
 			return access(this, function (value) {
 				return value === undefined ? jQuery.text(this) : this.empty().each(function () {
 					if (this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9) {
@@ -5757,7 +5755,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}, null, value, arguments.length);
 		},
 
-		append: function append() {
+		append: function () {
 			return domManip(this, arguments, function (elem) {
 				if (this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9) {
 					var target = manipulationTarget(this, elem);
@@ -5766,7 +5764,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		prepend: function prepend() {
+		prepend: function () {
 			return domManip(this, arguments, function (elem) {
 				if (this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9) {
 					var target = manipulationTarget(this, elem);
@@ -5775,7 +5773,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		before: function before() {
+		before: function () {
 			return domManip(this, arguments, function (elem) {
 				if (this.parentNode) {
 					this.parentNode.insertBefore(elem, this);
@@ -5783,7 +5781,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		after: function after() {
+		after: function () {
 			return domManip(this, arguments, function (elem) {
 				if (this.parentNode) {
 					this.parentNode.insertBefore(elem, this.nextSibling);
@@ -5791,7 +5789,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		empty: function empty() {
+		empty: function () {
 			var elem,
 			    i = 0;
 
@@ -5809,7 +5807,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return this;
 		},
 
-		clone: function clone(dataAndEvents, deepDataAndEvents) {
+		clone: function (dataAndEvents, deepDataAndEvents) {
 			dataAndEvents = dataAndEvents == null ? false : dataAndEvents;
 			deepDataAndEvents = deepDataAndEvents == null ? dataAndEvents : deepDataAndEvents;
 
@@ -5818,7 +5816,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		html: function html(value) {
+		html: function (value) {
 			return access(this, function (value) {
 				var elem = this[0] || {},
 				    i = 0,
@@ -5856,7 +5854,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}, null, value, arguments.length);
 		},
 
-		replaceWith: function replaceWith() {
+		replaceWith: function () {
 			var ignored = [];
 
 			// Make the changes, replacing each non-ignored context element with the new content
@@ -5905,7 +5903,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	var rnumnonpx = new RegExp("^(" + pnum + ")(?!px)[a-z%]+$", "i");
 
-	var getStyles = function getStyles(elem) {
+	var getStyles = function (elem) {
 
 		// Support: IE <=11 only, Firefox <=30 (#15098, #14150)
 		// IE throws on elements created in popups
@@ -5975,19 +5973,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		container.appendChild(div);
 
 		jQuery.extend(support, {
-			pixelPosition: function pixelPosition() {
+			pixelPosition: function () {
 				computeStyleTests();
 				return pixelPositionVal;
 			},
-			boxSizingReliable: function boxSizingReliable() {
+			boxSizingReliable: function () {
 				computeStyleTests();
 				return boxSizingReliableVal;
 			},
-			pixelMarginRight: function pixelMarginRight() {
+			pixelMarginRight: function () {
 				computeStyleTests();
 				return pixelMarginRightVal;
 			},
-			reliableMarginLeft: function reliableMarginLeft() {
+			reliableMarginLeft: function () {
 				computeStyleTests();
 				return reliableMarginLeftVal;
 			}
@@ -6053,7 +6051,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		// Define the hook, we'll check on the first run if it's really needed.
 		return {
-			get: function get() {
+			get: function () {
 				if (conditionFn()) {
 
 					// Hook not needed (or it's not possible to use it due
@@ -6206,7 +6204,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// behavior of getting and setting a style property
 		cssHooks: {
 			opacity: {
-				get: function get(elem, computed) {
+				get: function (elem, computed) {
 					if (computed) {
 
 						// We should always get a number back from opacity
@@ -6241,7 +6239,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		},
 
 		// Get and set the style property on a DOM Node
-		style: function style(elem, name, value, extra) {
+		style: function (elem, name, value, extra) {
 
 			// Don't set styles on text and comment nodes
 			if (!elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style) {
@@ -6268,7 +6266,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			// Check if we're setting a value
 			if (value !== undefined) {
-				type = typeof value === "undefined" ? "undefined" : _typeof(value);
+				type = typeof value;
 
 				// Convert "+=" or "-=" to relative numbers (#7345)
 				if (type === "string" && (ret = rcssNum.exec(value)) && ret[1]) {
@@ -6315,7 +6313,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 		},
 
-		css: function css(elem, name, extra, styles) {
+		css: function (elem, name, extra, styles) {
 			var val,
 			    num,
 			    hooks,
@@ -6359,7 +6357,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	jQuery.each(["height", "width"], function (i, name) {
 		jQuery.cssHooks[name] = {
-			get: function get(elem, computed, extra) {
+			get: function (elem, computed, extra) {
 				if (computed) {
 
 					// Certain elements can have dimension info if we invisibly show them
@@ -6378,7 +6376,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 			},
 
-			set: function set(elem, value, extra) {
+			set: function (elem, value, extra) {
 				var matches,
 				    styles = extra && getStyles(elem),
 				    subtract = extra && augmentWidthOrHeight(elem, name, extra, jQuery.css(elem, "boxSizing", false, styles) === "border-box", styles);
@@ -6410,7 +6408,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		border: "Width"
 	}, function (prefix, suffix) {
 		jQuery.cssHooks[prefix + suffix] = {
-			expand: function expand(value) {
+			expand: function (value) {
 				var i = 0,
 				    expanded = {},
 
@@ -6432,7 +6430,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.fn.extend({
-		css: function css(name, value) {
+		css: function (name, value) {
 			return access(this, function (elem, name, value) {
 				var styles,
 				    len,
@@ -6462,7 +6460,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	Tween.prototype = {
 		constructor: Tween,
-		init: function init(elem, options, prop, end, easing, unit) {
+		init: function (elem, options, prop, end, easing, unit) {
 			this.elem = elem;
 			this.prop = prop;
 			this.easing = easing || jQuery.easing._default;
@@ -6471,12 +6469,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			this.end = end;
 			this.unit = unit || (jQuery.cssNumber[prop] ? "" : "px");
 		},
-		cur: function cur() {
+		cur: function () {
 			var hooks = Tween.propHooks[this.prop];
 
 			return hooks && hooks.get ? hooks.get(this) : Tween.propHooks._default.get(this);
 		},
-		run: function run(percent) {
+		run: function (percent) {
 			var eased,
 			    hooks = Tween.propHooks[this.prop];
 
@@ -6504,7 +6502,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	Tween.propHooks = {
 		_default: {
-			get: function get(tween) {
+			get: function (tween) {
 				var result;
 
 				// Use a property on the element directly when it is not a DOM element,
@@ -6522,7 +6520,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				// Empty strings, null, undefined and "auto" are converted to 0.
 				return !result || result === "auto" ? 0 : result;
 			},
-			set: function set(tween) {
+			set: function (tween) {
 
 				// Use step hook for back compat.
 				// Use cssHook if its there.
@@ -6541,7 +6539,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	// Support: IE <=9 only
 	// Panic based approach to setting things on disconnected nodes
 	Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
-		set: function set(tween) {
+		set: function (tween) {
 			if (tween.elem.nodeType && tween.elem.parentNode) {
 				tween.elem[tween.prop] = tween.now;
 			}
@@ -6549,10 +6547,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.easing = {
-		linear: function linear(p) {
+		linear: function (p) {
 			return p;
 		},
-		swing: function swing(p) {
+		swing: function (p) {
 			return 0.5 - Math.cos(p * Math.PI) / 2;
 		},
 		_default: "swing"
@@ -6848,7 +6846,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			// Don't match elem in the :animated selector
 			delete tick.elem;
 		}),
-		    tick = function tick() {
+		    tick = function () {
 			if (stopped) {
 				return false;
 			}
@@ -6895,12 +6893,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			startTime: fxNow || createFxNow(),
 			duration: options.duration,
 			tweens: [],
-			createTween: function createTween(prop, end) {
+			createTween: function (prop, end) {
 				var tween = jQuery.Tween(elem, animation.opts, prop, end, animation.opts.specialEasing[prop] || animation.opts.easing);
 				animation.tweens.push(tween);
 				return tween;
 			},
-			stop: function stop(gotoEnd) {
+			stop: function (gotoEnd) {
 				var index = 0,
 
 
@@ -6967,7 +6965,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}]
 		},
 
-		tweener: function tweener(props, callback) {
+		tweener: function (props, callback) {
 			if (jQuery.isFunction(props)) {
 				callback = props;
 				props = ["*"];
@@ -6988,7 +6986,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		prefilters: [defaultPrefilter],
 
-		prefilter: function prefilter(callback, prepend) {
+		prefilter: function (callback, prepend) {
 			if (prepend) {
 				Animation.prefilters.unshift(callback);
 			} else {
@@ -6998,7 +6996,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.speed = function (speed, easing, fn) {
-		var opt = speed && (typeof speed === "undefined" ? "undefined" : _typeof(speed)) === "object" ? jQuery.extend({}, speed) : {
+		var opt = speed && typeof speed === "object" ? jQuery.extend({}, speed) : {
 			complete: fn || !fn && easing || jQuery.isFunction(speed) && speed,
 			duration: speed,
 			easing: fn && easing || easing && !jQuery.isFunction(easing) && easing
@@ -7039,7 +7037,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.fn.extend({
-		fadeTo: function fadeTo(speed, to, easing, callback) {
+		fadeTo: function (speed, to, easing, callback) {
 
 			// Show any hidden elements after setting opacity to 0
 			return this.filter(isHiddenWithinTree).css("opacity", 0).show()
@@ -7047,10 +7045,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			// Animate to the value specified
 			.end().animate({ opacity: to }, speed, easing, callback);
 		},
-		animate: function animate(prop, speed, easing, callback) {
+		animate: function (prop, speed, easing, callback) {
 			var empty = jQuery.isEmptyObject(prop),
 			    optall = jQuery.speed(speed, easing, callback),
-			    doAnimation = function doAnimation() {
+			    doAnimation = function () {
 
 				// Operate on a copy of prop so per-property easing won't be lost
 				var anim = Animation(this, jQuery.extend({}, prop), optall);
@@ -7064,8 +7062,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			return empty || optall.queue === false ? this.each(doAnimation) : this.queue(optall.queue, doAnimation);
 		},
-		stop: function stop(type, clearQueue, gotoEnd) {
-			var stopQueue = function stopQueue(hooks) {
+		stop: function (type, clearQueue, gotoEnd) {
+			var stopQueue = function (hooks) {
 				var stop = hooks.stop;
 				delete hooks.stop;
 				stop(gotoEnd);
@@ -7115,7 +7113,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 			});
 		},
-		finish: function finish(type) {
+		finish: function (type) {
 			if (type !== false) {
 				type = type || "fx";
 			}
@@ -7270,11 +7268,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	    attrHandle = jQuery.expr.attrHandle;
 
 	jQuery.fn.extend({
-		attr: function attr(name, value) {
+		attr: function (name, value) {
 			return access(this, jQuery.attr, name, value, arguments.length > 1);
 		},
 
-		removeAttr: function removeAttr(name) {
+		removeAttr: function (name) {
 			return this.each(function () {
 				jQuery.removeAttr(this, name);
 			});
@@ -7282,7 +7280,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.extend({
-		attr: function attr(elem, name, value) {
+		attr: function (elem, name, value) {
 			var ret,
 			    hooks,
 			    nType = elem.nodeType;
@@ -7329,7 +7327,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		attrHooks: {
 			type: {
-				set: function set(elem, value) {
+				set: function (elem, value) {
 					if (!support.radioValue && value === "radio" && nodeName(elem, "input")) {
 						var val = elem.value;
 						elem.setAttribute("type", value);
@@ -7342,7 +7340,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			}
 		},
 
-		removeAttr: function removeAttr(elem, value) {
+		removeAttr: function (elem, value) {
 			var name,
 			    i = 0,
 
@@ -7361,7 +7359,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	// Hooks for boolean attributes
 	boolHook = {
-		set: function set(elem, value, name) {
+		set: function (elem, value, name) {
 			if (value === false) {
 
 				// Remove boolean attributes when set to false
@@ -7397,11 +7395,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	    rclickable = /^(?:a|area)$/i;
 
 	jQuery.fn.extend({
-		prop: function prop(name, value) {
+		prop: function (name, value) {
 			return access(this, jQuery.prop, name, value, arguments.length > 1);
 		},
 
-		removeProp: function removeProp(name) {
+		removeProp: function (name) {
 			return this.each(function () {
 				delete this[jQuery.propFix[name] || name];
 			});
@@ -7409,7 +7407,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.extend({
-		prop: function prop(elem, name, value) {
+		prop: function (elem, name, value) {
 			var ret,
 			    hooks,
 			    nType = elem.nodeType;
@@ -7443,7 +7441,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		propHooks: {
 			tabIndex: {
-				get: function get(elem) {
+				get: function (elem) {
 
 					// Support: IE <=9 - 11 only
 					// elem.tabIndex doesn't always return the
@@ -7481,7 +7479,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	// since it considers such accessions noop
 	if (!support.optSelected) {
 		jQuery.propHooks.selected = {
-			get: function get(elem) {
+			get: function (elem) {
 
 				/* eslint no-unused-expressions: "off" */
 
@@ -7491,7 +7489,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 				return null;
 			},
-			set: function set(elem) {
+			set: function (elem) {
 
 				/* eslint no-unused-expressions: "off" */
 
@@ -7523,7 +7521,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	}
 
 	jQuery.fn.extend({
-		addClass: function addClass(value) {
+		addClass: function (value) {
 			var classes,
 			    elem,
 			    cur,
@@ -7566,7 +7564,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return this;
 		},
 
-		removeClass: function removeClass(value) {
+		removeClass: function (value) {
 			var classes,
 			    elem,
 			    cur,
@@ -7617,8 +7615,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return this;
 		},
 
-		toggleClass: function toggleClass(value, stateVal) {
-			var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+		toggleClass: function (value, stateVal) {
+			var type = typeof value;
 
 			if (typeof stateVal === "boolean" && type === "string") {
 				return stateVal ? this.addClass(value) : this.removeClass(value);
@@ -7670,7 +7668,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		hasClass: function hasClass(selector) {
+		hasClass: function (selector) {
 			var className,
 			    elem,
 			    i = 0;
@@ -7689,7 +7687,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	var rreturn = /\r/g;
 
 	jQuery.fn.extend({
-		val: function val(value) {
+		val: function (value) {
 			var hooks,
 			    ret,
 			    isFunction,
@@ -7756,7 +7754,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	jQuery.extend({
 		valHooks: {
 			option: {
-				get: function get(elem) {
+				get: function (elem) {
 
 					var val = jQuery.find.attr(elem, "value");
 					return val != null ? val :
@@ -7769,7 +7767,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 			},
 			select: {
-				get: function get(elem) {
+				get: function (elem) {
 					var value,
 					    option,
 					    i,
@@ -7812,7 +7810,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					return values;
 				},
 
-				set: function set(elem, value) {
+				set: function (elem, value) {
 					var optionSet,
 					    option,
 					    options = elem.options,
@@ -7844,7 +7842,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	// Radios and checkboxes getter/setter
 	jQuery.each(["radio", "checkbox"], function () {
 		jQuery.valHooks[this] = {
-			set: function set(elem, value) {
+			set: function (elem, value) {
 				if (Array.isArray(value)) {
 					return elem.checked = jQuery.inArray(jQuery(elem).val(), value) > -1;
 				}
@@ -7864,7 +7862,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	jQuery.extend(jQuery.event, {
 
-		trigger: function trigger(event, data, elem, onlyHandlers) {
+		trigger: function (event, data, elem, onlyHandlers) {
 
 			var i,
 			    cur,
@@ -7899,7 +7897,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			ontype = type.indexOf(":") < 0 && "on" + type;
 
 			// Caller can pass in a jQuery.Event object, Object, or just an event type string
-			event = event[jQuery.expando] ? event : new jQuery.Event(type, (typeof event === "undefined" ? "undefined" : _typeof(event)) === "object" && event);
+			event = event[jQuery.expando] ? event : new jQuery.Event(type, typeof event === "object" && event);
 
 			// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 			event.isTrigger = onlyHandlers ? 2 : 3;
@@ -7996,7 +7994,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		// Piggyback on a donor event to simulate a different one
 		// Used only for `focus(in | out)` events
-		simulate: function simulate(type, elem, event) {
+		simulate: function (type, elem, event) {
 			var e = jQuery.extend(new jQuery.Event(), event, {
 				type: type,
 				isSimulated: true
@@ -8009,12 +8007,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	jQuery.fn.extend({
 
-		trigger: function trigger(type, data) {
+		trigger: function (type, data) {
 			return this.each(function () {
 				jQuery.event.trigger(type, data, this);
 			});
 		},
-		triggerHandler: function triggerHandler(type, data) {
+		triggerHandler: function (type, data) {
 			var elem = this[0];
 			if (elem) {
 				return jQuery.event.trigger(type, data, elem, true);
@@ -8031,7 +8029,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 
 	jQuery.fn.extend({
-		hover: function hover(fnOver, fnOut) {
+		hover: function (fnOver, fnOut) {
 			return this.mouseenter(fnOver).mouseleave(fnOut || fnOver);
 		}
 	});
@@ -8050,12 +8048,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		jQuery.each({ focus: "focusin", blur: "focusout" }, function (orig, fix) {
 
 			// Attach a single capturing handler on the document while someone wants focusin/focusout
-			var handler = function handler(event) {
+			var handler = function (event) {
 				jQuery.event.simulate(fix, event.target, jQuery.event.fix(event));
 			};
 
 			jQuery.event.special[fix] = {
-				setup: function setup() {
+				setup: function () {
 					var doc = this.ownerDocument || this,
 					    attaches = dataPriv.access(doc, fix);
 
@@ -8064,7 +8062,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 					dataPriv.access(doc, fix, (attaches || 0) + 1);
 				},
-				teardown: function teardown() {
+				teardown: function () {
 					var doc = this.ownerDocument || this,
 					    attaches = dataPriv.access(doc, fix) - 1;
 
@@ -8124,7 +8122,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				} else {
 
 					// Item is non-scalar (array or object), encode its numeric index.
-					buildParams(prefix + "[" + ((typeof v === "undefined" ? "undefined" : _typeof(v)) === "object" && v != null ? i : "") + "]", v, traditional, add);
+					buildParams(prefix + "[" + (typeof v === "object" && v != null ? i : "") + "]", v, traditional, add);
 				}
 			});
 		} else if (!traditional && jQuery.type(obj) === "object") {
@@ -8145,7 +8143,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	jQuery.param = function (a, traditional) {
 		var prefix,
 		    s = [],
-		    add = function add(key, valueOrFunction) {
+		    add = function (key, valueOrFunction) {
 
 			// If value is a function, invoke it and use its return value
 			var value = jQuery.isFunction(valueOrFunction) ? valueOrFunction() : valueOrFunction;
@@ -8174,10 +8172,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.fn.extend({
-		serialize: function serialize() {
+		serialize: function () {
 			return jQuery.param(this.serializeArray());
 		},
-		serializeArray: function serializeArray() {
+		serializeArray: function () {
 			return this.map(function () {
 
 				// Can add propHook for "elements" to filter or add form elements
@@ -8571,7 +8569,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// Creates a full fledged settings object into target
 		// with both ajaxSettings and settings fields.
 		// If target is omitted, writes into ajaxSettings.
-		ajaxSetup: function ajaxSetup(target, settings) {
+		ajaxSetup: function (target, settings) {
 			return settings ?
 
 			// Building a settings object
@@ -8585,10 +8583,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		ajaxTransport: addToPrefiltersOrTransports(transports),
 
 		// Main method
-		ajax: function ajax(url, options) {
+		ajax: function (url, options) {
 
 			// If url is an object, simulate pre-1.5 signature
-			if ((typeof url === "undefined" ? "undefined" : _typeof(url)) === "object") {
+			if (typeof url === "object") {
 				options = url;
 				url = undefined;
 			}
@@ -8650,7 +8648,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 
 			// Status-dependent callbacks
-			_statusCode = s.statusCode || {},
+			statusCode = s.statusCode || {},
 
 
 			// Headers (they are sent all at once)
@@ -8667,7 +8665,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				readyState: 0,
 
 				// Builds headers hashtable if needed
-				getResponseHeader: function getResponseHeader(key) {
+				getResponseHeader: function (key) {
 					var match;
 					if (completed) {
 						if (!responseHeaders) {
@@ -8682,12 +8680,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				},
 
 				// Raw string
-				getAllResponseHeaders: function getAllResponseHeaders() {
+				getAllResponseHeaders: function () {
 					return completed ? responseHeadersString : null;
 				},
 
 				// Caches the header
-				setRequestHeader: function setRequestHeader(name, value) {
+				setRequestHeader: function (name, value) {
 					if (completed == null) {
 						name = requestHeadersNames[name.toLowerCase()] = requestHeadersNames[name.toLowerCase()] || name;
 						requestHeaders[name] = value;
@@ -8696,7 +8694,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				},
 
 				// Overrides response content-type header
-				overrideMimeType: function overrideMimeType(type) {
+				overrideMimeType: function (type) {
 					if (completed == null) {
 						s.mimeType = type;
 					}
@@ -8704,7 +8702,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				},
 
 				// Status-dependent callbacks
-				statusCode: function statusCode(map) {
+				statusCode: function (map) {
 					var code;
 					if (map) {
 						if (completed) {
@@ -8715,7 +8713,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 							// Lazy-add the new callbacks in a way that preserves old ones
 							for (code in map) {
-								_statusCode[code] = [_statusCode[code], map[code]];
+								statusCode[code] = [statusCode[code], map[code]];
 							}
 						}
 					}
@@ -8723,7 +8721,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				},
 
 				// Cancel the request
-				abort: function abort(statusText) {
+				abort: function (statusText) {
 					var finalText = statusText || strAbort;
 					if (transport) {
 						transport.abort(finalText);
@@ -9005,8 +9003,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 
 				// Status-dependent callbacks
-				jqXHR.statusCode(_statusCode);
-				_statusCode = undefined;
+				jqXHR.statusCode(statusCode);
+				statusCode = undefined;
 
 				if (fireGlobals) {
 					globalEventContext.trigger(isSuccess ? "ajaxSuccess" : "ajaxError", [jqXHR, s, isSuccess ? success : error]);
@@ -9028,11 +9026,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return jqXHR;
 		},
 
-		getJSON: function getJSON(url, data, callback) {
+		getJSON: function (url, data, callback) {
 			return jQuery.get(url, data, callback, "json");
 		},
 
-		getScript: function getScript(url, callback) {
+		getScript: function (url, callback) {
 			return jQuery.get(url, undefined, callback, "script");
 		}
 	});
@@ -9073,7 +9071,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.fn.extend({
-		wrapAll: function wrapAll(html) {
+		wrapAll: function (html) {
 			var wrap;
 
 			if (this[0]) {
@@ -9102,7 +9100,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			return this;
 		},
 
-		wrapInner: function wrapInner(html) {
+		wrapInner: function (html) {
 			if (jQuery.isFunction(html)) {
 				return this.each(function (i) {
 					jQuery(this).wrapInner(html.call(this, i));
@@ -9121,7 +9119,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		wrap: function wrap(html) {
+		wrap: function (html) {
 			var isFunction = jQuery.isFunction(html);
 
 			return this.each(function (i) {
@@ -9129,7 +9127,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			});
 		},
 
-		unwrap: function unwrap(selector) {
+		unwrap: function (selector) {
 			this.parent(selector).not("body").each(function () {
 				jQuery(this).replaceWith(this.childNodes);
 			});
@@ -9165,12 +9163,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	support.ajax = xhrSupported = !!xhrSupported;
 
 	jQuery.ajaxTransport(function (options) {
-		var _callback, errorCallback;
+		var callback, errorCallback;
 
 		// Cross domain only allowed if supported through XMLHttpRequest
 		if (support.cors || xhrSupported && !options.crossDomain) {
 			return {
-				send: function send(headers, complete) {
+				send: function (headers, complete) {
 					var i,
 					    xhr = options.xhr();
 
@@ -9203,10 +9201,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 
 					// Callback
-					_callback = function callback(type) {
+					callback = function (type) {
 						return function () {
-							if (_callback) {
-								_callback = errorCallback = xhr.onload = xhr.onerror = xhr.onabort = xhr.onreadystatechange = null;
+							if (callback) {
+								callback = errorCallback = xhr.onload = xhr.onerror = xhr.onabort = xhr.onreadystatechange = null;
 
 								if (type === "abort") {
 									xhr.abort();
@@ -9236,8 +9234,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					};
 
 					// Listen to events
-					xhr.onload = _callback();
-					errorCallback = xhr.onerror = _callback("error");
+					xhr.onload = callback();
+					errorCallback = xhr.onerror = callback("error");
 
 					// Support: IE 9 only
 					// Use onreadystatechange to replace onabort
@@ -9255,7 +9253,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 								// Also, save errorCallback to a variable
 								// as xhr.onerror cannot be accessed
 								window.setTimeout(function () {
-									if (_callback) {
+									if (callback) {
 										errorCallback();
 									}
 								});
@@ -9264,7 +9262,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					}
 
 					// Create the abort callback
-					_callback = _callback("abort");
+					callback = callback("abort");
 
 					try {
 
@@ -9273,15 +9271,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					} catch (e) {
 
 						// #14683: Only rethrow if this hasn't been notified as an error yet
-						if (_callback) {
+						if (callback) {
 							throw e;
 						}
 					}
 				},
 
-				abort: function abort() {
-					if (_callback) {
-						_callback();
+				abort: function () {
+					if (callback) {
+						callback();
 					}
 				}
 			};
@@ -9304,7 +9302,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			script: /\b(?:java|ecma)script\b/
 		},
 		converters: {
-			"text script": function textScript(text) {
+			"text script": function (text) {
 				jQuery.globalEval(text);
 				return text;
 			}
@@ -9326,15 +9324,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		// This transport only deals with cross domain requests
 		if (s.crossDomain) {
-			var script, _callback2;
+			var script, callback;
 			return {
-				send: function send(_, complete) {
+				send: function (_, complete) {
 					script = jQuery("<script>").prop({
 						charset: s.scriptCharset,
 						src: s.url
-					}).on("load error", _callback2 = function callback(evt) {
+					}).on("load error", callback = function (evt) {
 						script.remove();
-						_callback2 = null;
+						callback = null;
 						if (evt) {
 							complete(evt.type === "error" ? 404 : 200, evt.type);
 						}
@@ -9343,9 +9341,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					// Use native DOM manipulation to avoid our domManip AJAX trickery
 					document.head.appendChild(script[0]);
 				},
-				abort: function abort() {
-					if (_callback2) {
-						_callback2();
+				abort: function () {
+					if (callback) {
+						callback();
 					}
 				}
 			};
@@ -9358,7 +9356,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	// Default jsonp settings
 	jQuery.ajaxSetup({
 		jsonp: "callback",
-		jsonpCallback: function jsonpCallback() {
+		jsonpCallback: function () {
 			var callback = oldCallbacks.pop() || jQuery.expando + "_" + nonce++;
 			this[callback] = true;
 			return callback;
@@ -9522,7 +9520,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			params = undefined;
 
 			// Otherwise, build a param string
-		} else if (params && (typeof params === "undefined" ? "undefined" : _typeof(params)) === "object") {
+		} else if (params && typeof params === "object") {
 			type = "POST";
 		}
 
@@ -9578,7 +9576,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.offset = {
-		setOffset: function setOffset(elem, options, i) {
+		setOffset: function (elem, options, i) {
 			var curPosition,
 			    curLeft,
 			    curCSSTop,
@@ -9633,7 +9631,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	jQuery.fn.extend({
-		offset: function offset(options) {
+		offset: function (options) {
 
 			// Preserve chaining for setter
 			if (arguments.length) {
@@ -9672,7 +9670,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			};
 		},
 
-		position: function position() {
+		position: function () {
 			if (!this[0]) {
 				return;
 			}
@@ -9723,7 +9721,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		// and might be considered as more preferable results.
 		//
 		// This logic, however, is not guaranteed and can change at any point in the future
-		offsetParent: function offsetParent() {
+		offsetParent: function () {
 			return this.map(function () {
 				var offsetParent = this.offsetParent;
 
@@ -9822,17 +9820,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	jQuery.fn.extend({
 
-		bind: function bind(types, data, fn) {
+		bind: function (types, data, fn) {
 			return this.on(types, null, data, fn);
 		},
-		unbind: function unbind(types, fn) {
+		unbind: function (types, fn) {
 			return this.off(types, null, fn);
 		},
 
-		delegate: function delegate(selector, types, data, fn) {
+		delegate: function (selector, types, data, fn) {
 			return this.on(types, selector, data, fn);
 		},
-		undelegate: function undelegate(selector, types, fn) {
+		undelegate: function (selector, types, fn) {
 
 			// ( namespace ) or ( selector, types [, fn] )
 			return arguments.length === 1 ? this.off(selector, "**") : this.off(types, selector || "**", fn);
@@ -9900,7 +9898,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)(module)))
 
 /***/ }),
 /* 1 */
@@ -10146,7 +10143,7 @@ var Keyboard = {
    * @param {String} component - Foundation component's name, e.g. Slider or Reveal
    * @param {Objects} functions - collection of functions that are to be executed
    */
-  handleKey: function handleKey(event, component, functions) {
+  handleKey: function (event, component, functions) {
     var commandList = commands[component],
         keyCode = this.parseKey(event),
         cmds,
@@ -10195,7 +10192,7 @@ var Keyboard = {
    * @return String componentName
    */
 
-  register: function register(componentName, cmds) {
+  register: function (componentName, cmds) {
     commands[componentName] = cmds;
   },
 
@@ -10206,7 +10203,7 @@ var Keyboard = {
    * Traps the focus in the given element.
    * @param  {jQuery} $element  jQuery object to trap the foucs into.
    */
-  trapFocus: function trapFocus($element) {
+  trapFocus: function ($element) {
     var $focusable = findFocusable($element),
         $firstFocusable = $focusable.eq(0),
         $lastFocusable = $focusable.eq(-1);
@@ -10226,7 +10223,7 @@ var Keyboard = {
    * Releases the trapped focus from the given element.
    * @param  {jQuery} $element  jQuery object to release the focus for.
    */
-  releaseFocus: function releaseFocus($element) {
+  releaseFocus: function ($element) {
     $element.off('keydown.zf.trapfocus');
   }
 };
@@ -10255,8 +10252,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.MediaQuery = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _jquery = __webpack_require__(0);
 
@@ -10296,7 +10291,7 @@ var matchMedia = window.matchMedia || function () {
     info = 'getComputedStyle' in window && window.getComputedStyle(style, null) || style.currentStyle;
 
     styleMedia = {
-      matchMedium: function matchMedium(media) {
+      matchMedium: function (media) {
         var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
 
         // 'style.styleSheet' is used by IE <= 8 and 'style.textContent' for all other browsers
@@ -10330,7 +10325,7 @@ var MediaQuery = {
    * @function
    * @private
    */
-  _init: function _init() {
+  _init: function () {
     var self = this;
     var $meta = (0, _jquery2.default)('meta.foundation-mq');
     if (!$meta.length) {
@@ -10363,7 +10358,7 @@ var MediaQuery = {
    * @param {String} size - Name of the breakpoint to check.
    * @returns {Boolean} `true` if the breakpoint matches, `false` if it's smaller.
    */
-  atLeast: function atLeast(size) {
+  atLeast: function (size) {
     var query = this.get(size);
 
     if (query) {
@@ -10380,7 +10375,7 @@ var MediaQuery = {
    * @param {String} size - Name of the breakpoint to check, either 'small only' or 'small'. Omitting 'only' falls back to using atLeast() method.
    * @returns {Boolean} `true` if the breakpoint matches, `false` if it does not.
    */
-  is: function is(size) {
+  is: function (size) {
     size = size.trim().split(' ');
     if (size.length > 1 && size[1] === 'only') {
       if (size[0] === this._getCurrentSize()) return true;
@@ -10397,7 +10392,7 @@ var MediaQuery = {
    * @param {String} size - Name of the breakpoint to get.
    * @returns {String|null} - The media query of the breakpoint, or `null` if the breakpoint doesn't exist.
    */
-  get: function get(size) {
+  get: function (size) {
     for (var i in this.queries) {
       if (this.queries.hasOwnProperty(i)) {
         var query = this.queries[i];
@@ -10415,7 +10410,7 @@ var MediaQuery = {
    * @private
    * @returns {String} Name of the current breakpoint.
    */
-  _getCurrentSize: function _getCurrentSize() {
+  _getCurrentSize: function () {
     var matched;
 
     for (var i = 0; i < this.queries.length; i++) {
@@ -10426,7 +10421,7 @@ var MediaQuery = {
       }
     }
 
-    if ((typeof matched === 'undefined' ? 'undefined' : _typeof(matched)) === 'object') {
+    if (typeof matched === 'object') {
       return matched.name;
     } else {
       return matched;
@@ -10439,7 +10434,7 @@ var MediaQuery = {
    * @function
    * @private
    */
-  _watcher: function _watcher() {
+  _watcher: function () {
     var _this = this;
 
     (0, _jquery2.default)(window).off('resize.zf.mediaquery').on('resize.zf.mediaquery', function () {
@@ -10508,8 +10503,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Triggers = undefined;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -10528,7 +10521,7 @@ var MutationObserver = function () {
   return false;
 }();
 
-var triggers = function triggers(el, type) {
+var triggers = function (el, type) {
   el.data(type).split(' ').forEach(function (id) {
     (0, _jquery2.default)('#' + id)[type === 'close' ? 'trigger' : 'triggerHandler'](type + '.zf.trigger', [el]);
   });
@@ -10543,10 +10536,10 @@ var Triggers = {
 };
 
 Triggers.Listeners.Basic = {
-  openListener: function openListener() {
+  openListener: function () {
     triggers((0, _jquery2.default)(this), 'open');
   },
-  closeListener: function closeListener() {
+  closeListener: function () {
     var id = (0, _jquery2.default)(this).data('close');
     if (id) {
       triggers((0, _jquery2.default)(this), 'close');
@@ -10554,7 +10547,7 @@ Triggers.Listeners.Basic = {
       (0, _jquery2.default)(this).trigger('close.zf.trigger');
     }
   },
-  toggleListener: function toggleListener() {
+  toggleListener: function () {
     var id = (0, _jquery2.default)(this).data('toggle');
     if (id) {
       triggers((0, _jquery2.default)(this), 'toggle');
@@ -10562,7 +10555,7 @@ Triggers.Listeners.Basic = {
       (0, _jquery2.default)(this).trigger('toggle.zf.trigger');
     }
   },
-  closeableListener: function closeableListener(e) {
+  closeableListener: function (e) {
     e.stopPropagation();
     var animation = (0, _jquery2.default)(this).data('closable');
 
@@ -10574,7 +10567,7 @@ Triggers.Listeners.Basic = {
       (0, _jquery2.default)(this).fadeOut().trigger('closed.zf');
     }
   },
-  toggleFocusListener: function toggleFocusListener() {
+  toggleFocusListener: function () {
     var id = (0, _jquery2.default)(this).data('toggle-focus');
     (0, _jquery2.default)('#' + id).triggerHandler('toggle.zf.trigger', [(0, _jquery2.default)(this)]);
   }
@@ -10613,7 +10606,7 @@ Triggers.Initializers.addToggleFocusListener = function ($elem) {
 
 // More Global/complex listeners and triggers
 Triggers.Listeners.Global = {
-  resizeListener: function resizeListener($nodes) {
+  resizeListener: function ($nodes) {
     if (!MutationObserver) {
       //fallback for IE 9
       $nodes.each(function () {
@@ -10623,7 +10616,7 @@ Triggers.Listeners.Global = {
     //trigger all listening elements and signal a resize event
     $nodes.attr('data-events', "resize");
   },
-  scrollListener: function scrollListener($nodes) {
+  scrollListener: function ($nodes) {
     if (!MutationObserver) {
       //fallback for IE 9
       $nodes.each(function () {
@@ -10633,7 +10626,7 @@ Triggers.Listeners.Global = {
     //trigger all listening elements and signal a scroll event
     $nodes.attr('data-events', "scroll");
   },
-  closeMeListener: function closeMeListener(e, pluginId) {
+  closeMeListener: function (e, pluginId) {
     var plugin = e.namespace.split('.')[0];
     var plugins = (0, _jquery2.default)('[data-' + plugin + ']').not('[data-yeti-box="' + pluginId + '"]');
 
@@ -10651,7 +10644,7 @@ Triggers.Listeners.Global = {
   if (pluginName) {
     if (typeof pluginName === 'string') {
       plugNames.push(pluginName);
-    } else if ((typeof pluginName === 'undefined' ? 'undefined' : _typeof(pluginName)) === 'object' && typeof pluginName[0] === 'string') {
+    } else if (typeof pluginName === 'object' && typeof pluginName[0] === 'string') {
       plugNames.concat(pluginName);
     } else {
       console.error('Plugin names must be strings');
@@ -10700,7 +10693,7 @@ Triggers.Initializers.addMutationEventsListener = function ($elem) {
   var $nodes = $elem.find('[data-resize], [data-scroll], [data-mutate]');
 
   //element callback
-  var listeningElementsMutation = function listeningElementsMutation(mutationRecordsList) {
+  var listeningElementsMutation = function (mutationRecordsList) {
     var $target = (0, _jquery2.default)(mutationRecordsList[0].target);
 
     //trigger the event handler for the element depending on type
@@ -10811,11 +10804,11 @@ var initClasses = ['mui-enter', 'mui-leave'];
 var activeClasses = ['mui-enter-active', 'mui-leave-active'];
 
 var Motion = {
-  animateIn: function animateIn(element, animation, cb) {
+  animateIn: function (element, animation, cb) {
     animate(true, element, animation, cb);
   },
 
-  animateOut: function animateOut(element, animation, cb) {
+  animateOut: function (element, animation, cb) {
     animate(false, element, animation, cb);
   }
 };
@@ -11215,7 +11208,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Nest = {
-  Feather: function Feather(menu) {
+  Feather: function (menu) {
     var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'zf';
 
     menu.attr('role', 'menubar');
@@ -11261,7 +11254,7 @@ var Nest = {
 
     return;
   },
-  Burn: function Burn(menu, type) {
+  Burn: function (menu, type) {
     var //items = menu.find('li'),
     subMenuClass = 'is-' + type + '-submenu',
         subItemClass = subMenuClass + '-item',
@@ -11377,7 +11370,7 @@ var SpotSwipe = function () {
       $.event.special.swipe = { setup: init };
 
       $.each(['left', 'up', 'down', 'right'], function () {
-        $.event.special['swipe' + this] = { setup: function setup() {
+        $.event.special['swipe' + this] = { setup: function () {
             $(this).on('swipe', $.noop);
           } };
       });
@@ -11411,7 +11404,7 @@ Touch.setupTouchHandler = function ($) {
       });
     });
 
-    var handleTouch = function handleTouch(event) {
+    var handleTouch = function (event) {
       var touches = event.changedTouches,
           first = touches[0],
           eventTypes = {
@@ -11616,22 +11609,22 @@ var Accordion = function (_Plugin) {
             _this.toggle($tabContent);
           }).on('keydown.zf.accordion', function (e) {
             _foundationUtil.Keyboard.handleKey(e, 'Accordion', {
-              toggle: function toggle() {
+              toggle: function () {
                 _this.toggle($tabContent);
               },
-              next: function next() {
+              next: function () {
                 var $a = $elem.next().find('a').focus();
                 if (!_this.options.multiExpand) {
                   $a.trigger('click.zf.accordion');
                 }
               },
-              previous: function previous() {
+              previous: function () {
                 var $a = $elem.prev().find('a').focus();
                 if (!_this.options.multiExpand) {
                   $a.trigger('click.zf.accordion');
                 }
               },
-              handled: function handled() {
+              handled: function () {
                 e.preventDefault();
                 e.stopPropagation();
               }
@@ -12026,13 +12019,13 @@ var AccordionMenu = function (_Plugin) {
         });
 
         _foundationUtil.Keyboard.handleKey(e, 'AccordionMenu', {
-          open: function open() {
+          open: function () {
             if ($target.is(':hidden')) {
               _this.down($target);
               $target.find('li').first().find('a').first().focus();
             }
           },
-          close: function close() {
+          close: function () {
             if ($target.length && !$target.is(':hidden')) {
               // close active sub of this item
               _this.up($target);
@@ -12042,15 +12035,15 @@ var AccordionMenu = function (_Plugin) {
               $element.parents('li').first().find('a').first().focus();
             }
           },
-          up: function up() {
+          up: function () {
             $prevElement.focus();
             return true;
           },
-          down: function down() {
+          down: function () {
             $nextElement.focus();
             return true;
           },
-          toggle: function toggle() {
+          toggle: function () {
             if (_this.options.submenuToggle) {
               return false;
             }
@@ -12059,10 +12052,10 @@ var AccordionMenu = function (_Plugin) {
               return true;
             }
           },
-          closeAll: function closeAll() {
+          closeAll: function () {
             _this.hideAll();
           },
-          handled: function handled(preventDefault) {
+          handled: function (preventDefault) {
             if (preventDefault) {
               e.preventDefault();
             }
@@ -12506,7 +12499,7 @@ var Drilldown = function (_Plugin) {
         });
 
         _foundationUtil.Keyboard.handleKey(e, 'Drilldown', {
-          next: function next() {
+          next: function () {
             if ($element.is(_this.$submenuAnchors)) {
               _this._show($element.parent('li'));
               $element.parent('li').one((0, _foundationUtil3.transitionend)($element), function () {
@@ -12515,7 +12508,7 @@ var Drilldown = function (_Plugin) {
               return true;
             }
           },
-          previous: function previous() {
+          previous: function () {
             _this._hide($element.parent('li').parent('ul'));
             $element.parent('li').parent('ul').one((0, _foundationUtil3.transitionend)($element), function () {
               setTimeout(function () {
@@ -12524,24 +12517,24 @@ var Drilldown = function (_Plugin) {
             });
             return true;
           },
-          up: function up() {
+          up: function () {
             $prevElement.focus();
             // Don't tap focus on first element in root ul
             return !$element.is(_this.$element.find('> li:first-child > a'));
           },
-          down: function down() {
+          down: function () {
             $nextElement.focus();
             // Don't tap focus on last element in root ul
             return !$element.is(_this.$element.find('> li:last-child > a'));
           },
-          close: function close() {
+          close: function () {
             // Don't close on element in root ul
             if (!$element.is(_this.$element.find('> li > a'))) {
               _this._hide($element.parent().parent());
               $element.parent().parent().siblings('a').focus();
             }
           },
-          open: function open() {
+          open: function () {
             if (!$element.is(_this.$menuItems)) {
               // not menu item means back button
               _this._hide($element.parent('li').parent('ul'));
@@ -12559,7 +12552,7 @@ var Drilldown = function (_Plugin) {
               return true;
             }
           },
-          handled: function handled(preventDefault) {
+          handled: function (preventDefault) {
             if (preventDefault) {
               e.preventDefault();
             }
@@ -12984,7 +12977,7 @@ var DropdownMenu = function (_Plugin) {
           parClass = 'is-dropdown-submenu-parent';
 
       // used for onClick and in the keyboard handlers
-      var handleClickFn = function handleClickFn(e) {
+      var handleClickFn = function (e) {
         var $elem = (0, _jquery2.default)(e.target).parentsUntil('ul', '.' + parClass),
             hasSub = $elem.hasClass(parClass),
             hasClicked = $elem.attr('data-is-click') === 'true',
@@ -13064,15 +13057,15 @@ var DropdownMenu = function (_Plugin) {
           }
         });
 
-        var nextSibling = function nextSibling() {
+        var nextSibling = function () {
           $nextElement.children('a:first').focus();
           e.preventDefault();
         },
-            prevSibling = function prevSibling() {
+            prevSibling = function () {
           $prevElement.children('a:first').focus();
           e.preventDefault();
         },
-            openSub = function openSub() {
+            openSub = function () {
           var $sub = $element.children('ul.is-dropdown-submenu');
           if ($sub.length) {
             _this._show($sub);
@@ -13082,7 +13075,7 @@ var DropdownMenu = function (_Plugin) {
             return;
           }
         },
-            closeSub = function closeSub() {
+            closeSub = function () {
           //if ($element.is(':first-child')) {
           var close = $element.parent('ul').parent('li');
           close.children('a:first').focus();
@@ -13092,12 +13085,12 @@ var DropdownMenu = function (_Plugin) {
         };
         var functions = {
           open: openSub,
-          close: function close() {
+          close: function () {
             _this._hide(_this.$element);
             _this.$menuItems.eq(0).children('a').focus(); // focus to first element
             e.preventDefault();
           },
-          handled: function handled() {
+          handled: function () {
             e.stopImmediatePropagation();
           }
         };
@@ -13719,7 +13712,7 @@ var SmoothScroll = function (_Plugin) {
             var _this = this;
 
             // click handler function.
-            var handleLinkClick = function handleLinkClick(e) {
+            var handleLinkClick = function (e) {
                 // exit function if the event source isn't coming from an anchor with href attribute starts with '#'
                 if (!(0, _jquery2.default)(this).is('a[href^="#"]')) {
                     return false;
@@ -13823,8 +13816,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Tabs = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -14057,19 +14048,19 @@ var Tabs = function (_Plugin) {
 
         // handle keyboard event with keyboard util
         _foundationUtil.Keyboard.handleKey(e, 'Tabs', {
-          open: function open() {
+          open: function () {
             $element.find('[role="tab"]').focus();
             _this._handleTabChange($element);
           },
-          previous: function previous() {
+          previous: function () {
             $prevElement.find('[role="tab"]').focus();
             _this._handleTabChange($prevElement);
           },
-          next: function next() {
+          next: function () {
             $nextElement.find('[role="tab"]').focus();
             _this._handleTabChange($nextElement);
           },
-          handled: function handled() {
+          handled: function () {
             e.stopPropagation();
             e.preventDefault();
           }
@@ -14189,7 +14180,7 @@ var Tabs = function (_Plugin) {
     value: function selectTab(elem, historyHandled) {
       var idStr;
 
-      if ((typeof elem === 'undefined' ? 'undefined' : _typeof(elem)) === 'object') {
+      if (typeof elem === 'object') {
         idStr = elem[0].id;
       } else {
         idStr = elem;
@@ -14439,49 +14430,19 @@ exports.Timer = Timer;
 "use strict";
 
 
-module.exports = function (module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function () {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _whatInput = __webpack_require__(38);
+var _whatInput = __webpack_require__(37);
 
 var _whatInput2 = _interopRequireDefault(_whatInput);
 
-var _foundationSites = __webpack_require__(21);
+var _foundationSites = __webpack_require__(20);
 
 var _foundationSites2 = _interopRequireDefault(_foundationSites);
 
-__webpack_require__(39);
+__webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14496,7 +14457,7 @@ window.$ = _jquery2.default;
 //import './cbu_custom';
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14510,7 +14471,7 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _foundation = __webpack_require__(23);
+var _foundation = __webpack_require__(22);
 
 var _foundationUtil = __webpack_require__(1);
 
@@ -14532,7 +14493,7 @@ var _foundationUtil9 = __webpack_require__(10);
 
 var _foundationUtil10 = __webpack_require__(5);
 
-var _foundation2 = __webpack_require__(22);
+var _foundation2 = __webpack_require__(21);
 
 var _foundation3 = __webpack_require__(11);
 
@@ -14540,39 +14501,39 @@ var _foundation4 = __webpack_require__(12);
 
 var _foundation5 = __webpack_require__(13);
 
-var _foundation6 = __webpack_require__(24);
+var _foundation6 = __webpack_require__(23);
 
 var _foundation7 = __webpack_require__(14);
 
-var _foundation8 = __webpack_require__(25);
+var _foundation8 = __webpack_require__(24);
 
-var _foundation9 = __webpack_require__(26);
+var _foundation9 = __webpack_require__(25);
 
-var _foundation10 = __webpack_require__(27);
+var _foundation10 = __webpack_require__(26);
 
-var _foundation11 = __webpack_require__(28);
+var _foundation11 = __webpack_require__(27);
 
-var _foundation12 = __webpack_require__(29);
+var _foundation12 = __webpack_require__(28);
 
-var _foundation13 = __webpack_require__(31);
+var _foundation13 = __webpack_require__(30);
 
-var _foundation14 = __webpack_require__(32);
+var _foundation14 = __webpack_require__(31);
 
-var _foundation15 = __webpack_require__(33);
+var _foundation15 = __webpack_require__(32);
 
-var _foundation16 = __webpack_require__(34);
+var _foundation16 = __webpack_require__(33);
 
 var _foundation17 = __webpack_require__(16);
 
-var _foundation18 = __webpack_require__(35);
+var _foundation18 = __webpack_require__(34);
 
 var _foundation19 = __webpack_require__(17);
 
-var _foundation20 = __webpack_require__(36);
+var _foundation20 = __webpack_require__(35);
 
-var _foundation21 = __webpack_require__(37);
+var _foundation21 = __webpack_require__(36);
 
-var _foundation22 = __webpack_require__(30);
+var _foundation22 = __webpack_require__(29);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14646,7 +14607,7 @@ _foundation.Foundation.plugin(_foundation22.ResponsiveAccordionTabs, 'Responsive
 exports.default = _foundation.Foundation;
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15292,7 +15253,7 @@ Abide.defaults = {
 
     // Domain || URL
     website: {
-      test: function test(text) {
+      test: function (text) {
         return Abide.defaults.patterns['domain'].test(text) || Abide.defaults.patterns['url'].test(text);
       }
     }
@@ -15307,7 +15268,7 @@ Abide.defaults = {
    * @option
    */
   validators: {
-    equalTo: function equalTo(el, required, parent) {
+    equalTo: function (el, required, parent) {
       return (0, _jquery2.default)('#' + el.attr('data-equalto')).val() === el.val();
     }
   }
@@ -15316,7 +15277,7 @@ Abide.defaults = {
 exports.Abide = Abide;
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15326,8 +15287,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Foundation = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _jquery = __webpack_require__(0);
 
@@ -15360,16 +15319,16 @@ var Foundation = {
    * Defines a Foundation plugin, adding it to the `Foundation` namespace and the list of plugins to initialize when reflowing.
    * @param {Object} plugin - The constructor of the plugin.
    */
-  plugin: function plugin(_plugin, name) {
+  plugin: function (plugin, name) {
     // Object key to use when adding to global Foundation object
     // Examples: Foundation.Reveal, Foundation.OffCanvas
-    var className = name || functionName(_plugin);
+    var className = name || functionName(plugin);
     // Object key to use when storing the plugin, also used to create the identifying data attribute for the plugin
     // Examples: data-reveal, data-off-canvas
     var attrName = hyphenate(className);
 
     // Add to the Foundation object and the plugins list (for reflowing)
-    this._plugins[attrName] = this[className] = _plugin;
+    this._plugins[attrName] = this[className] = plugin;
   },
   /**
    * @function
@@ -15380,7 +15339,7 @@ var Foundation = {
    * @param {String} name - the name of the plugin, passed as a camelCased string.
    * @fires Plugin#init
    */
-  registerPlugin: function registerPlugin(plugin, name) {
+  registerPlugin: function (plugin, name) {
     var pluginName = name ? hyphenate(name) : functionName(plugin.constructor).toLowerCase();
     plugin.uuid = (0, _foundationUtil.GetYoDigits)(6, pluginName);
 
@@ -15408,7 +15367,7 @@ var Foundation = {
    * @param {Object} plugin - an instance of a plugin, usually `this` in context.
    * @fires Plugin#destroyed
    */
-  unregisterPlugin: function unregisterPlugin(plugin) {
+  unregisterPlugin: function (plugin) {
     var pluginName = hyphenate(functionName(plugin.$element.data('zfPlugin').constructor));
 
     this._uuids.splice(this._uuids.indexOf(plugin.uuid), 1);
@@ -15430,7 +15389,7 @@ var Foundation = {
    * @param {String} plugins - optional string of an individual plugin key, attained by calling `$(element).data('pluginName')`, or string of a plugin class i.e. `'dropdown'`
    * @default If no argument is passed, reflow all currently active plugins.
    */
-  reInit: function reInit(plugins) {
+  reInit: function (plugins) {
     var isJQ = plugins instanceof _jquery2.default;
     try {
       if (isJQ) {
@@ -15438,20 +15397,20 @@ var Foundation = {
           (0, _jquery2.default)(this).data('zfPlugin')._init();
         });
       } else {
-        var type = typeof plugins === 'undefined' ? 'undefined' : _typeof(plugins),
+        var type = typeof plugins,
             _this = this,
             fns = {
-          'object': function object(plgs) {
+          'object': function (plgs) {
             plgs.forEach(function (p) {
               p = hyphenate(p);
               (0, _jquery2.default)('[data-' + p + ']').foundation('_init');
             });
           },
-          'string': function string() {
+          'string': function () {
             plugins = hyphenate(plugins);
             (0, _jquery2.default)('[data-' + plugins + ']').foundation('_init');
           },
-          'undefined': function undefined() {
+          'undefined': function () {
             this['object'](Object.keys(_this._plugins));
           }
         };
@@ -15469,7 +15428,7 @@ var Foundation = {
    * @param {Object} elem - jQuery object containing the element to check inside. Also checks the element itself, unless it's the `document` object.
    * @param {String|Array} plugins - A list of plugins to initialize. Leave this out to initialize everything.
    */
-  reflow: function reflow(elem, plugins) {
+  reflow: function (elem, plugins) {
 
     // If plugins is undefined, just grab everything
     if (typeof plugins === 'undefined') {
@@ -15520,15 +15479,15 @@ var Foundation = {
   },
   getFnName: functionName,
 
-  addToJquery: function addToJquery($) {
+  addToJquery: function ($) {
     // TODO: consider not making this a jQuery function
     // TODO: need way to reflow vs. re-initialize
     /**
      * The Foundation jQuery method.
      * @param {String|Array} method - An action to perform on the current jQuery object.
      */
-    var foundation = function foundation(method) {
-      var type = typeof method === 'undefined' ? 'undefined' : _typeof(method),
+    var foundation = function (method) {
+      var type = typeof method,
           $noJS = $('.no-js');
 
       if ($noJS.length) {
@@ -15578,7 +15537,7 @@ Foundation.util = {
    * @param {Number} delay - Time in ms to delay the call of `func`.
    * @returns function
    */
-  throttle: function throttle(func, delay) {
+  throttle: function (func, delay) {
     var timer = null;
 
     return function () {
@@ -15626,7 +15585,7 @@ window.Foundation = Foundation;
   if (!window.performance || !window.performance.now) {
     window.performance = {
       start: Date.now(),
-      now: function now() {
+      now: function () {
         return Date.now() - this.start;
       }
     };
@@ -15642,8 +15601,8 @@ if (!Function.prototype.bind) {
 
     var aArgs = Array.prototype.slice.call(arguments, 1),
         fToBind = this,
-        fNOP = function fNOP() {},
-        fBound = function fBound() {
+        fNOP = function () {},
+        fBound = function () {
       return fToBind.apply(this instanceof fNOP ? this : oThis, aArgs.concat(Array.prototype.slice.call(arguments)));
     };
 
@@ -15681,7 +15640,7 @@ function hyphenate(str) {
 exports.Foundation = Foundation;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15905,14 +15864,14 @@ var Dropdown = function (_Positionable) {
             visibleFocusableElements = _foundationUtil.Keyboard.findFocusable(_this.$element);
 
         _foundationUtil.Keyboard.handleKey(e, 'Dropdown', {
-          open: function open() {
+          open: function () {
             if ($target.is(_this.$anchors)) {
               _this.open();
               _this.$element.attr('tabindex', -1).focus();
               e.preventDefault();
             }
           },
-          close: function close() {
+          close: function () {
             _this.close();
             _this.$anchors.focus();
           }
@@ -16155,7 +16114,7 @@ Dropdown.defaults = {
 exports.Dropdown = Dropdown;
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16562,7 +16521,7 @@ Equalizer.defaults = {
 exports.Equalizer = Equalizer;
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16834,7 +16793,7 @@ Interchange.SPECIAL_QUERIES = {
 exports.Interchange = Interchange;
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17156,7 +17115,7 @@ Magellan.defaults = {
 exports.Magellan = Magellan;
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17648,12 +17607,12 @@ var OffCanvas = function (_Plugin) {
       var _this4 = this;
 
       _foundationUtil.Keyboard.handleKey(e, 'OffCanvas', {
-        close: function close() {
+        close: function () {
           _this4.close();
           _this4.$lastTrigger.focus();
           return true;
         },
-        handled: function handled() {
+        handled: function () {
           e.stopPropagation();
           e.preventDefault();
         }
@@ -17787,7 +17746,7 @@ OffCanvas.defaults = {
 exports.OffCanvas = OffCanvas;
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18099,13 +18058,13 @@ var Orbit = function (_Plugin) {
           this.$wrapper.add(this.$bullets).on('keydown.zf.orbit', function (e) {
             // handle keyboard event with keyboard util
             _foundationUtil.Keyboard.handleKey(e, 'Orbit', {
-              next: function next() {
+              next: function () {
                 _this.changeSlide(true);
               },
-              previous: function previous() {
+              previous: function () {
                 _this.changeSlide(false);
               },
-              handled: function handled() {
+              handled: function () {
                 // if bullet is focused, make sure focus moves
                 if ((0, _jquery2.default)(e.target).is(_this.$bullets)) {
                   _this.$bullets.filter('.is-active').focus();
@@ -18395,7 +18354,7 @@ Orbit.defaults = {
 exports.Orbit = Orbit;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18691,7 +18650,7 @@ ResponsiveAccordionTabs.defaults = {};
 exports.ResponsiveAccordionTabs = ResponsiveAccordionTabs;
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18900,7 +18859,7 @@ ResponsiveMenu.defaults = {};
 exports.ResponsiveMenu = ResponsiveMenu;
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19108,7 +19067,7 @@ ResponsiveToggle.defaults = {
 exports.ResponsiveToggle = ResponsiveToggle;
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19301,14 +19260,14 @@ var Reveal = function (_Plugin) {
 
       this.$element.on({
         'open.zf.trigger': this.open.bind(this),
-        'close.zf.trigger': function closeZfTrigger(event, $element) {
+        'close.zf.trigger': function (event, $element) {
           if (event.target === _this.$element[0] || (0, _jquery2.default)(event.target).parents('[data-closable]')[0] === $element) {
             // only close reveal when it's explicitly called
             return _this3.close.apply(_this3);
           }
         },
         'toggle.zf.trigger': this.toggle.bind(this),
-        'resizeme.zf.trigger': function resizemeZfTrigger() {
+        'resizeme.zf.trigger': function () {
           _this._updatePosition();
         }
       });
@@ -19412,7 +19371,7 @@ var Reveal = function (_Plugin) {
       }
       // Motion UI method of reveal
       if (this.options.animationIn) {
-        var afterAnimation = function afterAnimation() {
+        var afterAnimation = function () {
           _this.$element.attr({
             'aria-hidden': false,
             'tabindex': -1
@@ -19484,7 +19443,7 @@ var Reveal = function (_Plugin) {
       if (this.options.closeOnEsc) {
         (0, _jquery2.default)(window).on('keydown.zf.reveal', function (e) {
           _foundationUtil.Keyboard.handleKey(e, 'Reveal', {
-            close: function close() {
+            close: function () {
               if (_this.options.closeOnEsc) {
                 _this.close();
               }
@@ -19758,7 +19717,7 @@ function mobileSniff() {
 exports.Reveal = Reveal;
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20369,25 +20328,25 @@ var Slider = function (_Plugin) {
 
         // handle keyboard event with keyboard util
         _foundationUtil.Keyboard.handleKey(e, 'Slider', {
-          decrease: function decrease() {
+          decrease: function () {
             newValue = oldValue - _this.options.step;
           },
-          increase: function increase() {
+          increase: function () {
             newValue = oldValue + _this.options.step;
           },
-          decrease_fast: function decrease_fast() {
+          decrease_fast: function () {
             newValue = oldValue - _this.options.step * 10;
           },
-          increase_fast: function increase_fast() {
+          increase_fast: function () {
             newValue = oldValue + _this.options.step * 10;
           },
-          min: function min() {
+          min: function () {
             newValue = _this.options.start;
           },
-          max: function max() {
+          max: function () {
             newValue = _this.options.end;
           },
-          handled: function handled() {
+          handled: function () {
             // only set handle pos when event was handled specially
             e.preventDefault();
             _this._setHandlePos(_$handle, newValue, true);
@@ -20568,7 +20527,7 @@ function baseLog(base, value) {
 exports.Slider = Slider;
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21154,7 +21113,7 @@ function emCalc(em) {
 exports.Sticky = Sticky;
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21356,7 +21315,7 @@ Toggler.defaults = {
 exports.Toggler = Toggler;
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21874,13 +21833,11 @@ Tooltip.defaults = {
 exports.Tooltip = Tooltip;
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /**
  * what-input - A global utility for tracking the current input method (mouse, keyboard or touch).
@@ -21889,11 +21846,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * @license MIT
  */
 (function webpackUniversalModuleDefinition(root, factory) {
-	if (( false ? 'undefined' : _typeof(exports)) === 'object' && ( false ? 'undefined' : _typeof(module)) === 'object') module.exports = factory();else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') exports["whatInput"] = factory();else root["whatInput"] = factory();
-})(undefined, function () {
+	if (true) module.exports = factory();else if (typeof define === 'function' && define.amd) define("whatInput", [], factory);else if (typeof exports === 'object') exports["whatInput"] = factory();else root["whatInput"] = factory();
+})(this, function () {
 	return (/******/function (modules) {
 			// webpackBootstrap
 			/******/ // The module cache
@@ -22262,10 +22216,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	);
 });
 ;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)(module)))
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22305,7 +22258,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         //}
     };
     Drupal.behaviors.socialMenu = {
-        attach: function attach(context, settings) {
+        attach: function (context, settings) {
 
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
             //const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
@@ -22330,41 +22283,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 icon: 'twitter.svg'
             }];
 
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = menuItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var menuItem = _step.value;
-
-                    $('.menu a[title="' + menuItem.title + '"]').empty().append('<img src="' + imagePath + menuItem.icon + '">');
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-
-            ;
+            for (var menuItem of menuItems) {
+                $('.menu a[title="' + menuItem.title + '"]').empty().append('<img src="' + imagePath + menuItem.icon + '">');
+            };
         }
     };
 })(jQuery);
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(20);
+module.exports = __webpack_require__(19);
 
 
 /***/ })

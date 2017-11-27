@@ -45,21 +45,31 @@
 }
 
 .showcase-top {
+    color:white;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    padding:0 $global-padding;
+    @include breakpoint(medium) {
+    padding:0;
+
+    top: 20%;
+    width: 30%;
+    }
+    margin: auto;
+
     .site-title {
         font-family: $pn-black;
+    @include breakpoint(medium) {
         font-size: 4.7vw;
+    }
         margin-bottom:0px;
         //font-size:rem-calc(60);
 
     }
-    color:white;
-    position: absolute;
-    z-index: 5;
-    top: 20%;
-    left: 0;
-    right: 0;
-    width: 30%;
-    margin: auto;
 }
 
 .showcase-bottom {

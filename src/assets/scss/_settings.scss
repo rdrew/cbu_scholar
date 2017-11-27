@@ -107,9 +107,10 @@ $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
 
+//logo width
 
- 
-
+$logo-width-interior: 6rem;
+$logo-width-front: 8rem;
 
 
 $pn-thin: 'proxima_nova_scosfthin' /*'proxima_nova_ltthin'*/;
@@ -178,7 +179,7 @@ $block-grid-max: 8;
 // ------------------
 
 //$header-font-family: $body-font-family;
-$header-font-family: 'proxima_nova_ltthin', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 //$header-font-weight: $global-weight-normal;
 $header-font-weight: 600;
 $header-font-style: normal;

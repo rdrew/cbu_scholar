@@ -36,6 +36,10 @@ function loadConfig() {
     return yaml.load(ymlFile);
 }
 
+//=================
+// Gulp Tasks
+//=================
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
     gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
@@ -47,6 +51,10 @@ gulp.task('brute',
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
     gulp.series('build', server, watch));
+
+//==================
+// Process Functions
+//==================
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -160,31 +168,10 @@ function server(done) {
 }
 
 // Start a proxy server with Browsersync + regex file swapping
-
 function serverRemote(done) {
 
-    /*
-     * Proxy Live site and inject local files
-     *  - run 'npm install --save-dev browser-sync'
-     *  - change the varables below as needed
-     *  - 'node bsProxy' to run the task
-     */
-
-    //initialize all of our variables
-    var URL, ASSETS_DIR, REMOTE_ASSETS_PATH, REGEX, browserSync, serveStatic;
-
-    // Url of the site to be proxied
-    URL = 'cbufaces.cairnrepo.org';
-    // Root assets folder (contains /css/, /js/ etc)
-    ASSETS_DIR = 'dist/assets';
-    // Path on server to remote assets folder (escape the slashes; no trailing slash)
-    //REMOTE_ASSETS_PATH = 'http:\/\/cbufaces.cairnrepo.org\/sites\/cbufaces.cairnrepo.org\/themes\/cbu_scholar\/dist\/assets';
-    REMOTE_ASSETS_PATH = 'http://cbufaces.cairnrepo.org/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets';
     var PATH_STRING = REMOTE_ASSETS_PATH.replace(/\//g, '\\/');
-/*
- * var newpath = path.replace(/\//g, '\\/');
- */
-    REGEX = new RegExp(PATH_STRING, 'g');
+    var REGEX = new RegExp(PATH_STRING, 'g');
 
     browser.init({
 
@@ -194,15 +181,10 @@ function serverRemote(done) {
         // modify url of the remote assets so they point to the locally served version
         rewriteRules: [{
 
-            //match: /REMOTE_ASSETS_PATH/g,
             match: REGEX,
             fn: function(matched) {
                 return ''
             }
-            //match: REGEX,
-            //fn: function (req, res, match) {
-            //return '';
-            //}
         }],
 
         // serve up these local files

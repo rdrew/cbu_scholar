@@ -22261,8 +22261,8 @@ exports.Tooltip = Tooltip;
         attach: function (context, settings) {
 
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-            //const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
-            var imagePath = '/img/';
+            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
+            //const imagePath = '/img/';
             var menuItems = [{
                 title: 'Twitter',
                 icon: 'twitter.svg'

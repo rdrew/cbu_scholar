@@ -19,6 +19,8 @@ header .top-bar {
 .large-logo {
     display: none;
 }
+
+//front page
 .front {
     .large-logo {
         display: none;
@@ -38,55 +40,40 @@ header .top-bar {
         }
     }
 }
-/*
- *interior pages
- */
+//interior pages
 
-    .logo-wrapper {
-        //width: rem-calc($logo-width-interior);
-        //width: $logo-width-interior;
-    }
-
+.top-bar .main-menu {
+    margin-left: calc(#{ $logo-width-interior } + #{ $global-margin });
+    @include show-for(large);
+}
+//frontpage
+.front {
+    //dont show topbar main menu on lp
     .top-bar .main-menu {
-        //margin-left: $logo-width-interior;
-        margin-left: calc(#{ $logo-width-interior } + #{ $global-margin });
-        @include show-for(large);
+        display:none;
     }
-    /*
-     *front page
-     */
-    .front {
-        .logo-wrapper {
-            //width: $logo-width-front;
-        }
-        //dont show topbar main menu on lp
-        .top-bar .main-menu {
-            display:none;
-        }
-    }
+}
 
-    .top-bar {
-        .button-group {
-            margin-bottom:0;
-        }
-    }
-
-    //mobile menu
-    .mobile-menu__button {
-        //@include hide-for(large);
-        float: right;
+.top-bar {
+    .button-group {
         margin-bottom:0;
-        @include breakpoint( large ) {
-            display:none;
-        }
-        //text-indent: right;
     }
-    #block-system-user-menu {
-        @include show-for(large);
-        .menu a {
-            @extend .button;
-            margin: .5px;
-        }
+}
+
+//mobile menu
+.mobile-menu__button {
+    @include hamburger(#ccc, green, 30px, 30px, 3px, 4);
+    transition: all .4s;
+    float: right;
+    margin:rem-calc(6) 0;
+    @include breakpoint( large ) {
+        display:none;
     }
-
-
+}
+#block-system-user-menu {
+    @include show-for(large);
+    .menu a {
+        @extend .button;
+        margin: .5px;
+    }
+}

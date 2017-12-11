@@ -113,7 +113,8 @@ $logo-width-interior: 6rem;
 $logo-width-front: 8rem;
 
 
-$pn-thin: 'proxima_nova_scosfthin' /*'proxima_nova_ltthin'*/;
+/*$pn-thin: 'proxima_nova_scosfthin' [>'proxima_nova_ltthin'<];*/
+$pn-thin: 'proxima_nova_ltthin';
 $pn-regular: 'Proxima Nova';
 $pn-semi-Bold: 'proxima_nova_ltsemibold';
 $pn-bold: 'proxima_nova_altbold';

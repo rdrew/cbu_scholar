@@ -22226,36 +22226,20 @@ exports.Tooltip = Tooltip;
 
 (function ($) {
 
-    Drupal.behaviors.userMenu = {
-        //attach: function(context, settings) {
+    Drupal.behaviors.searchFacets = {
+        attach: function (context, settings) {
 
-        ////const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-        ////const imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
-        //const imagePath = '/img/';
-        //var menuItems = [{
-        //title: 'help',
-        //icon: 'question.svg'
-        //},
+            //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
+            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
+            $('.plusminus .plus').empty().append('yay');
+            //const imagePath = '/img/';
 
-        //{
-        //title: 'contact',
-        //icon: 'envelope.svg'
-        //},
-
-        //{
-        //title: 'bookmarks',
-        //icon: 'list.svg'
-        //}
-
-        //];
-
-        //for (let menuItem of menuItems) {
-        //$('.menu a[title="' + menuItem.title + '"]')
-        ////.empty()
-        //.prepend('<img src="' + imagePath + menuItem.icon + '">');
-        //};
-
-        //}
+            //for (let menuItem of menuItems) {
+            //$('.menu a[title="' + menuItem.title + '"]')
+            //.empty()
+            //.append('<img src="' + imagePath + menuItem.icon + '">');
+            //};
+        }
     };
     Drupal.behaviors.socialMenu = {
         attach: function (context, settings) {

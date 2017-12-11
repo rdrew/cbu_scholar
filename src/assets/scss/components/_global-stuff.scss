@@ -6,3 +6,7 @@ a {
     transition: all 0.2s ease-out;
     text-decoration: none;
 }
+
+[type="submit"] {
+    @extend .button;
+}

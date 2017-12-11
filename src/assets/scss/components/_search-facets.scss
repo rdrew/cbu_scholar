@@ -1,0 +1,38 @@
+.search-facets, %search-facets {
+    &__block {
+
+    }
+    &__block-title {
+        /*display: none;*/
+        @extend h2;
+    }
+    &__facet {
+
+        ul {
+            @extend .no-bullet;
+            /*margin:0;*/
+            padding:0;
+        }
+        border-bottom:1px solid #ccc;
+        padding: $global-padding/2 0;
+    }
+    &__facet-title {
+        /*color:blue;*/
+        /*font-family:$pn-semi-Bold;*/
+        font-weight:100;
+    }
+    &__filter-button {
+        @extend .small;
+    }
+    &__plus {
+
+    }
+    &__minus {
+
+    }
+}
+// the good the bad and the fugly 
+.search-facets .block__title { @extend %search-facets__block-title; }
+.search-facets .islandora-solr-facet-wrapper { @extend %search-facets__facet; }
+.islandora-solr-facet-wrapper h3 { @extend %search-facets__facet-title; }
+.search-facets #edit-range-slider-submit { @extend %search-facets__filter-button; } 

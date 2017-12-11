@@ -4,13 +4,13 @@ $menu = menu_navigation_links('main-menu');
 <header class="l-header" role="banner">
     <div class="grid-container top-bar">
         <div class="top-bar-left">
-            <div class="logo-wrapper">
+            <div class="large-logo logo-wrapper">
                 <a class="site-logo" href="<?php print $frontpage; ?>" rel="home" title="<?php print t('Home'); ?>">
 
 
 
-<?php if(drupal_is_front_page()): ?>
-                    <svg class="logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
+<!-- large logo -->
+                    <svg class="small logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
                         <polygon class="logo__bg-back" fill="#F89624" points="188,175.536 90.504,161.325 0,175.536 0,0 188,0"></polygon>
                         <polygon class="logo__bg-front" fill="#DD6E26" points="188,171.049 90.504,156.838 0,171.049 0,0 188,0"></polygon>
                         <g class="logo__name">
@@ -51,12 +51,12 @@ $menu = menu_navigation_links('main-menu');
                         <path d="M155.078 126.248c0 0.785-0.64 1.426-1.426 1.426s-1.427-0.641-1.427-1.426 c0-0.787 0.641-1.426 1.427-1.426S155.078 125.461 155.078 126.248" fill="#FFFFFF"></path>
                         </g>
                     </svg>
-<?php else: ?>
-<!--
-<svg width="100%" height="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
--->
-
-                    <svg class="logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
+<!-- small logo -->
+                </a>
+            </div>
+            <div class="small-logo logo-wrapper">
+                <a class="site-logo" href="<?php print $frontpage; ?>" rel="home" title="<?php print t('Home'); ?>">
+                    <svg class="large logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
     <g transform="matrix(0.918251,0,0,1,0,0)">
         <path d="M188,175.536L90.504,161.325L0,175.536L0,0L188,0L188,175.536Z" style="fill:rgb(248,150,36);fill-rule:nonzero;"/>
         <path d="M188,171.049L90.504,156.838L0,171.049L0,0L188,0L188,171.049Z" style="fill:rgb(221,110,38);fill-rule:nonzero;"/>
@@ -99,7 +99,6 @@ $menu = menu_navigation_links('main-menu');
         </g>
     </g>
 </svg>
-<?php endif; ?>
                 </a>
             </div>
 
@@ -113,7 +112,8 @@ $menu = menu_navigation_links('main-menu');
                 <?php print $content; ?>
             </div>
             <?php endif; ?>
-        <button class="mobile-menu__button button" data-toggle="offCanvas" type="button">Open Menu</button>
+        <!-- <button class="mobile-menu__button button" data-toggle="offCanvas" type="button">Open Menu</button> -->
+<span class="hamburger mobile-menu__button" data-toggle="offCanvas"></span>
         </div>
     </div>
 </header>

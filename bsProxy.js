@@ -9,7 +9,7 @@
 var PROXY, ASSETS_DIR, REMOTE_ASSETS_PATH, REGEX, browserSync, serveStatic;
 
 // Url of the site to be proxied
-PROXY              = 'cbufaces.cairnrepo.org';
+PROXY              = 'https://cbufaces.cairnrepo.org';
 // Root assets folder (contains /css/, /js/ etc)
 ASSETS_DIR         = 'dist/assets';
 // Path on server to remote assets folder (escape the slashes; no trailing slash)
@@ -38,25 +38,29 @@ browserSync({
 
     // proxy live site
     proxy: PROXY,
+    logLevel: "debug",
+    //https: "true",
+    startPath: '/user'
+
 
     // modify url of the remote assets so they point to the locally served version
-    rewriteRules: [
-        {
+    //rewriteRules: [
+        //{
 
-            //match: /REMOTE_ASSETS_PATH/g,
-            match: REGEX,
-            fn: function(matched) { return '' }
+            ////match: /REMOTE_ASSETS_PATH/g,
             //match: REGEX,
-            //fn: function (req, res, match) {
-                //return '';
-            //}
-        }
-    ],
+            //fn: function(matched) { return '' }
+            ////match: REGEX,
+            ////fn: function (req, res, match) {
+                ////return '';
+            ////}
+        //}
+    //],
 
-    // serve up these local files
-    serveStatic: [ASSETS_DIR],
+    //// serve up these local files
+    //serveStatic: [ASSETS_DIR],
 
-    // Watch this stuff for changes and inject it if it does
-    files: ASSETS_DIR + '/**'
+    //// Watch this stuff for changes and inject it if it does
+    //files: ASSETS_DIR + '/**'
 
 });

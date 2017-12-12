@@ -25,14 +25,55 @@
         @extend .small;
     }
     &__plus {
+        width:1rem;
 
     }
     &__minus {
 
+        width:1rem;
+    }
+    &__facet-row {
+        &:hover {
+            background: $light-gray;
+        }
+    }
+}
+.date-picker,
+%date-picker {
+    @extend .input-group;
+    &__range-field__label {
+        @extend .input-group-label;
+        width:4rem;
+    }
+
+    &__range-field__text {
+
+        @extend .input-group-field;
+        /*test*/
     }
 }
 // the good the bad and the fugly 
 .search-facets .block__title { @extend %search-facets__block-title; }
 .search-facets .islandora-solr-facet-wrapper { @extend %search-facets__facet; }
 .islandora-solr-facet-wrapper h3 { @extend %search-facets__facet-title; }
-.search-facets #edit-range-slider-submit { @extend %search-facets__filter-button; } 
+.search-facets .form-submit { @extend %search-facets__filter-button; } 
+.search-facets .plus img { @extend %search-facets__plus; }
+.search-facets .minus img { @extend %search-facets__minus; }
+.islandora-solr-facet li { @extend %search-facets__facet-row; }
+
+
+.islandora-solr-date-filter {
+    .form-type-textfield {
+        @extend %date-picker;
+        label {
+
+            @extend %date-picker__range-field__label;
+        }
+        input {
+
+            @extend %date-picker__range-field__text; 
+        }
+
+    }
+}  
+

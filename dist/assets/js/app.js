@@ -22231,14 +22231,10 @@ exports.Tooltip = Tooltip;
 
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
             var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
-            $('.plusminus .plus').empty().append('yay');
-            //const imagePath = '/img/';
-
-            //for (let menuItem of menuItems) {
-            //$('.menu a[title="' + menuItem.title + '"]')
-            //.empty()
-            //.append('<img src="' + imagePath + menuItem.icon + '">');
-            //};
+            var plus = imagePath + 'plus-square-o.svg';
+            var minus = imagePath + 'minus-square-o.svg';
+            $('.plusminus .plus').empty().append('<img src="' + plus + '">');
+            $('.plusminus .minus').empty().append('<img src="' + minus + '">');
         }
     };
     Drupal.behaviors.socialMenu = {

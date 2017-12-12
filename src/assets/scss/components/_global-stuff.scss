@@ -10,3 +10,18 @@ a {
 [type="submit"] {
     @extend .button;
 }
+
+
+
+%green-box { 
+    background: #efffd8;
+    //background: $light-green;
+    border: 1px solid $green;
+    //border: 1px solid #8ec641;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-width: 8px 0 4px;
+    padding: .5rem;
+}

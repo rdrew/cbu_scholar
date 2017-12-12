@@ -1,5 +1,5 @@
 .search-facets, %search-facets {
-@extend %green-box;
+    @extend %green-box;
 
     &__block {
 
@@ -54,11 +54,11 @@
         /*test*/
     }
 }
-// the good the bad and the fugly 
+// the good the bad and the fugly
 .search-facets .block__title { @extend %search-facets__block-title; }
 .search-facets .islandora-solr-facet-wrapper { @extend %search-facets__facet; }
 .islandora-solr-facet-wrapper h3 { @extend %search-facets__facet-title; }
-.search-facets .form-submit { @extend %search-facets__filter-button; } 
+.search-facets .form-submit { @extend %search-facets__filter-button; }
 .search-facets .plus img { @extend %search-facets__plus; }
 .search-facets .minus img { @extend %search-facets__minus; }
 .islandora-solr-facet li { @extend %search-facets__facet-row; }
@@ -73,9 +73,77 @@
         }
         input {
 
-            @extend %date-picker__range-field__text; 
+            @extend %date-picker__range-field__text;
         }
 
     }
-}  
+}
+//============================================
+.product-filters {
+    padding: 0.5rem 1.5rem;
+    background-color: $white;
+    margin-top: 2.5rem;
+
+    label {
+        color: $dark-gray;
+
+    }
+
+    .menu.nested {
+        margin-left: 0rem;
+        margin-bottom: 0.9rem;
+
+    }
+
+    .menu > li > a {
+        padding-left: 0;
+        color: darken($dark-gray, 25%);
+        font-size: 0.85rem;
+        font-weight: 600;
+
+    }
+
+    .is-accordion-submenu-parent > a::after {
+        border-color: $medium-gray transparent transparent;
+
+    }
+
+    .clear-all {
+        font-size: 0.9rem;
+        color: $medium-gray;
+
+    }
+
+    .more {
+        color: $primary-color;
+        font-size: 0.9rem;
+        cursor: pointer;
+
+    }
+
+
+}
+
+.product-filters-header {
+    font-size: 1.25rem;
+    padding-top: 0.5rem;
+
+}
+
+.product-filters-tab {
+    border-top: 1px solid $light-gray;
+
+}
+
+.product-filters-tab:last-child() {
+    border-bottom: 1px solid $light-gray;
+
+}
+
+.mobile-product-filters {
+    border-bottom: 1px solid $light-gray;
+
+}
+
+
 

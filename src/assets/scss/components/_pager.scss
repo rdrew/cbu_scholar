@@ -1,0 +1,15 @@
+.pager {
+    @include pagination-container;
+
+    &__item {
+        &--current {
+            @include pagination-item-current;
+        }
+        &--next {
+        }
+        &--previous {
+        }
+        &--last {
+        }
+    }
+}

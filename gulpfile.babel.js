@@ -179,7 +179,7 @@ function serverRemote(done) {
         proxy: URL,
         //https: true,
         logLevel: "debug",
-        startPath: "/user",
+        //startPath: "/user",
         injectChanges: true,
 
         // modify url of the remote assets so they point to the locally served version

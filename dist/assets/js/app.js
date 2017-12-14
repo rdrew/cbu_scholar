@@ -22229,6 +22229,7 @@ exports.Tooltip = Tooltip;
     Drupal.behaviors.searchFilters = {
         attach: function (context, settings) {
 
+            var elem = $('.filter-list li');
             $(elem).each(function (index, value) {
                 var text = $(this).contents().filter(function () {
                     return this.nodeType === 3;

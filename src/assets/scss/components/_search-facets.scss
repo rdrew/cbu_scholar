@@ -1,12 +1,46 @@
-.search-facets, %search-facets {
-    @extend %green-box;
+.filter-list {
+    @extend .button-group;
+    li {
 
+        @include button;
+border-radius: 10px;
+padding:5px;
+
+margin-right:2px;
+    }
+    @include menu-base;
+    a {
+        display: inline;
+        padding:0px;
+    }
+
+}
+
+
+.search-facets, %search-facets {
+    //@extend %green-box;
+    .is-dropdown-submenu {
+        //display: block !important;
+    }
+    .menu .submenu a {
+        display:inline;
+
+    }
+    a.button {
+        @extend .hollow;
+        &:hover {
+            background: #efffd8;
+            //outline: 1px solid $green;
+        }
+    }
     &__block {
 
     }
     &__block-title {
+
         /*display: none;*/
-        @extend h2;
+        @extend .button;
+        border: 1px solid $green;
     }
     &__facet {
 
@@ -14,9 +48,20 @@
             @extend .no-bullet;
             /*margin:0;*/
             padding:0;
+            padding:10px;
+            //background:$orange-lighter;
+    background: #efffd8;
+            a {
+                padding:0;
+            }
+            .submenu a {
+                display: inline !important;
+                //display: ial;
+            }
+
         }
-        border-bottom:1px solid #ccc;
-        padding: $global-padding/2 0;
+        //border-bottom:1px solid #ccc;
+        //padding: $global-padding/2 0;
     }
     &__facet-title {
         /*color:blue;*/
@@ -35,8 +80,12 @@
         width:1rem;
     }
     &__facet-row {
+
+            border: 1px solid #efffd8;
+            border-width: 1px 0;
         &:hover {
             background: white;
+            border-color: #ccc;
         }
     }
 }

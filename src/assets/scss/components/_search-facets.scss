@@ -1,12 +1,40 @@
+.page-islandora-search .block--islandora-solr-simple {
+    width:400px;
+}
+//hiding stuff --- this should be temporary
+.block--islandora-solr-current-query {
+    .block__title {
+        display: none;
+    }
+    .islandora-solr-query-wrap {
+
+        display: none;
+    }
+}
+.islandora-solr-filter-wrap {
+    h3 {
+    float: left;
+    @extend h5;
+    margin-right: $global-margin/2;
+    &:after {
+        content:":";
+    }
+    }
+
+}
 .filter-list {
     @extend .button-group;
-    li {
-
+    .remove-filter {
         @include button;
-border-radius: 10px;
-padding:5px;
 
-margin-right:2px;
+
+        &.notequal {
+            @include button-style($orange, auto, auto);
+        }
+
+        border-radius: 10px;
+        padding:5px;
+        margin-right:2px;
     }
     @include menu-base;
     a {
@@ -19,6 +47,7 @@ margin-right:2px;
 
 .search-facets, %search-facets {
     //@extend %green-box;
+    margin-bottom:$global-margin;
     .is-dropdown-submenu {
         //display: block !important;
     }
@@ -50,7 +79,7 @@ margin-right:2px;
             padding:0;
             padding:10px;
             //background:$orange-lighter;
-    background: #efffd8;
+            background: #efffd8;
             a {
                 padding:0;
             }
@@ -81,8 +110,8 @@ margin-right:2px;
     }
     &__facet-row {
 
-            border: 1px solid #efffd8;
-            border-width: 1px 0;
+        border: 1px solid #efffd8;
+        border-width: 1px 0;
         &:hover {
             background: white;
             border-color: #ccc;

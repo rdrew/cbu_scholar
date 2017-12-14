@@ -22226,6 +22226,23 @@ exports.Tooltip = Tooltip;
 
 (function ($) {
 
+    Drupal.behaviors.searchFilters = {
+        attach: function (context, settings) {
+
+            $(elem).each(function (index, value) {
+                var text = $(this).contents().filter(function () {
+                    return this.nodeType === 3;
+                });
+                var link = $(this).contents().filter(function () {
+                    return this.nodeType === 1;
+                });
+                link.empty().prepend(text);
+            });
+
+            $(".remove-filter:contains('=')").addClass("equal");
+            $(".remove-filter:contains('≠')").addClass("notequal");
+        }
+    };
     Drupal.behaviors.searchFacets = {
         attach: function (context, settings) {
 

@@ -5,6 +5,7 @@
     Drupal.behaviors.searchFilters = {
         attach: function(context, settings) {
 
+            //put the filter term inside the 'remove-filter' link
             var elem = $('.filter-list li');
             $(elem).each(function (index, value) {
                 var text = $(this).contents().filter(function () {
@@ -14,11 +15,28 @@
                     return this.nodeType === 1;
                 });
                 link.empty().prepend(text);
-
             });
-
+            //add classes for unique styling
             $( ".remove-filter:contains('=')" ).addClass( "equal" );
             $( ".remove-filter:contains('≠')" ).addClass( "notequal" );
+            //add search term to search box
+            var query = $(".islandora-solr-query-list li")
+                .contents()
+                .filter(function () {
+                    return this.nodeType === 3;
+                })
+                .text();
+            var searchBox = $(".page-islandora-search #edit-islandora-simple-search-query");
+            searchBox.attr( 'value', query );
+
+            //tooltips for remove filter buttons
+            var filterButton = $(".remove-filter");
+
+            filterButton
+                .attr('data-tooltip', '')
+                .attr('aria-haspopup', 'true')
+                .attr('title', 'click to remove search filter')
+                .addClass('has-tip');
 
 
         }

@@ -1,5 +1,5 @@
     #Url of the site to be proxied
-URL: "http://cbufaces.cairnrepo.org"
+URL: "cbufaces.cairnrepo.org"
 
     #Root assets folder (contains /css/, /js/ etc)
 ASSETS_DIR: "dist/assets"

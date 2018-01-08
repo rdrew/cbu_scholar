@@ -1,3 +1,15 @@
+
+.user-menu,
+#block-system-user-menu {
+    @include show-for(large);
+    .menu a {
+        @extend .button;
+        margin: .5px;
+    }
+}
+
+
+
 //.user-menu,
 //%user-menu {
 

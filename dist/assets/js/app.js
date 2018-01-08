@@ -22225,97 +22225,106 @@ exports.Tooltip = Tooltip;
 
 
 (function ($) {
+  Drupal.behaviors.searchFilters = {
+    attach: function (context, settings) {
+      //put the filter term inside the 'remove-filter' link
+      var elem = $(".filter-list li");
+      $(elem).each(function (index, value) {
+        var text = $(this).contents().filter(function () {
+          return this.nodeType === 3;
+        });
+        var link = $(this).contents().filter(function () {
+          return this.nodeType === 1;
+        });
+        link.empty().prepend(text);
+      });
+      //add classes for unique styling
+      $(".remove-filter:contains('=')").addClass("equal");
+      $(".remove-filter:contains('≠')").addClass("notequal");
+      //add search term to search box
+      var query = $(".islandora-solr-query-list li").contents().filter(function () {
+        return this.nodeType === 3;
+      }).text();
+      var searchBox = $(".page-islandora-search #edit-islandora-simple-search-query");
+      searchBox.attr("value", query);
 
-    Drupal.behaviors.searchFilters = {
-        attach: function (context, settings) {
+      //tooltips for remove filter buttons
+      var filterButton = $(".remove-filter");
 
-            //put the filter term inside the 'remove-filter' link
-            var elem = $('.filter-list li');
-            $(elem).each(function (index, value) {
-                var text = $(this).contents().filter(function () {
-                    return this.nodeType === 3;
-                });
-                var link = $(this).contents().filter(function () {
-                    return this.nodeType === 1;
-                });
-                link.empty().prepend(text);
-            });
-            //add classes for unique styling
-            $(".remove-filter:contains('=')").addClass("equal");
-            $(".remove-filter:contains('≠')").addClass("notequal");
-            //add search term to search box
-            var query = $(".islandora-solr-query-list li").contents().filter(function () {
-                return this.nodeType === 3;
-            }).text();
-            var searchBox = $(".page-islandora-search #edit-islandora-simple-search-query");
-            searchBox.attr('value', query);
+      filterButton.attr("aria-haspopup", "true").attr("title", "click to remove search filter").addClass("has-tip");
 
-            //tooltips for remove filter buttons
-            var filterButton = $(".remove-filter");
+      //move the datepicker
+      $("#ui-datepicker-div").appendTo($(".date-range-filter-wrapper"));
+    }
+  };
 
-            filterButton.attr('data-tooltip', '').attr('aria-haspopup', 'true').attr('title', 'click to remove search filter').addClass('has-tip');
-        }
-    };
-    Drupal.behaviors.searchFacets = {
-        attach: function (context, settings) {
+  Drupal.behaviors.searchDropdown = {
+    attach: function (context, settings) {
+      //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
+      var imagePath = "/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/";
+      var plus = imagePath + "plus-square-o.svg";
+      var minus = imagePath + "minus-square-o.svg";
+      $(".plusminus .plus").empty().append('<img src="' + plus + '">');
+      $(".plusminus .minus").empty().append('<img src="' + minus + '">');
+    }
+  };
+  Drupal.behaviors.searchFacets = {
+    attach: function (context, settings) {
+      //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
+      var imagePath = "/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/";
+      var plus = imagePath + "plus-square-o.svg";
+      var minus = imagePath + "minus-square-o.svg";
+      $(".plusminus .plus").empty().append('<img src="' + plus + '">');
+      $(".plusminus .minus").empty().append('<img src="' + minus + '">');
+      //More (Expand) or Less (Collapse)
+      //$('.categories-menu.menu.nested').each(function(){
+      //var filterAmount = $(this).find('li').length;
+      //if( filterAmount > 5){
+      //$('li', this).eq(4).nextAll().hide().addClass('toggleable');
+      //$(this).append('<li class="more">More</li>');
+      //}
+      //});
 
-            //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
-            var plus = imagePath + 'plus-square-o.svg';
-            var minus = imagePath + 'minus-square-o.svg';
-            $('.plusminus .plus').empty().append('<img src="' + plus + '">');
-            $('.plusminus .minus').empty().append('<img src="' + minus + '">');
-            //More (Expand) or Less (Collapse)
-            //$('.categories-menu.menu.nested').each(function(){
-            //var filterAmount = $(this).find('li').length;
-            //if( filterAmount > 5){
-            //$('li', this).eq(4).nextAll().hide().addClass('toggleable');
-            //$(this).append('<li class="more">More</li>');
-            //}
-            //});
+      //$('.categories-menu.menu.nested').on('click','.more', function(){
+      //if( $(this).hasClass('less') ){
+      //$(this).text('More').removeClass('less');
+      //}else{
+      //$(this).text('Less').addClass('less');
+      //}
+      //$(this).siblings('li.toggleable').slideToggle();
+      //});
+    }
+  };
+  Drupal.behaviors.socialMenu = {
+    attach: function (context, settings) {
+      //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
+      var imagePath = "/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/";
+      //const imagePath = '/img/';
+      var menuItems = [{
+        title: "Twitter",
+        icon: "twitter.svg"
+      }, {
+        title: "Facebook",
+        icon: "facebook.svg"
+      }, {
+        title: "Instagram",
+        icon: "instagram.svg"
+      }, {
+        title: "Linkedin",
+        icon: "linkedin.svg"
+      }, {
+        title: "Youtube",
+        icon: "youtube.svg"
+      }, {
+        title: "Snapchat",
+        icon: "twitter.svg"
+      }];
 
-            //$('.categories-menu.menu.nested').on('click','.more', function(){
-            //if( $(this).hasClass('less') ){
-            //$(this).text('More').removeClass('less');
-            //}else{
-            //$(this).text('Less').addClass('less');
-            //}
-            //$(this).siblings('li.toggleable').slideToggle();
-            //});
-
-        }
-    };
-    Drupal.behaviors.socialMenu = {
-        attach: function (context, settings) {
-
-            //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
-            var imagePath = '/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/';
-            //const imagePath = '/img/';
-            var menuItems = [{
-                title: 'Twitter',
-                icon: 'twitter.svg'
-            }, {
-                title: 'Facebook',
-                icon: 'facebook.svg'
-            }, {
-                title: 'Instagram',
-                icon: 'instagram.svg'
-            }, {
-                title: 'Linkedin',
-                icon: 'linkedin.svg'
-            }, {
-                title: 'Youtube',
-                icon: 'youtube.svg'
-            }, {
-                title: 'Snapchat',
-                icon: 'twitter.svg'
-            }];
-
-            for (var menuItem of menuItems) {
-                $('.menu a[title="' + menuItem.title + '"]').empty().append('<img src="' + imagePath + menuItem.icon + '">');
-            };
-        }
-    };
+      for (var menuItem of menuItems) {
+        $('.menu a[title="' + menuItem.title + '"]').empty().append('<img src="' + imagePath + menuItem.icon + '">');
+      }
+    }
+  };
 })(jQuery);
 
 /***/ }),

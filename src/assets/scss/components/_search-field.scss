@@ -13,19 +13,24 @@
     }
 }
 //################################
+.form-item-islandora-simple-search-query--2,
 .form-item-islandora-simple-search-query {
     width:100%;
 }
-#islandora-solr-simple-search-form .form-wrapper {
+#islandora-solr-simple-search-form .form-wrapper,
+#islandora-solr-simple-search-form--2 .form-wrapper {
     @extend %islandora-simple-search__container;
     label {
         display:none
     }
 } 
-#islandora-solr-simple-search-form .form-text {
+#islandora-solr-simple-search-form .form-text,
+#islandora-solr-simple-search-form--2 .form-text {
     @extend %islandora-simple-search__text-field;
 } 
-#islandora-solr-simple-search-form .form-submit {
+
+#islandora-solr-simple-search-form .form-submit,
+#islandora-solr-simple-search-form--2 .form-submit {
     @extend %islandora-simple-search__submit-button;
 } 
 

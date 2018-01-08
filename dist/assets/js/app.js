@@ -22262,12 +22262,24 @@ exports.Tooltip = Tooltip;
     attach: function (context, settings) {
       //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';
       var imagePath = "/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets/img/";
-      var plus = imagePath + "plus-square-o.svg";
-      var minus = imagePath + "minus-square-o.svg";
-      $(".plusminus .plus").empty().append('<img src="' + plus + '">');
-      $(".plusminus .minus").empty().append('<img src="' + minus + '">');
+      //const imagePath = '/img/';
+      var menuItems = [{
+        title: "List",
+        icon: "list.svg"
+      }, {
+        title: "Search",
+        icon: "search.svg"
+      }, {
+        title: "Contact",
+        icon: "envelope.svg"
+      }];
+
+      for (var menuItem of menuItems) {
+        $('.user-menu [title="' + menuItem.title + '"]').empty().append('<img src="' + imagePath + menuItem.icon + '">');
+      }
     }
   };
+
   Drupal.behaviors.searchFacets = {
     attach: function (context, settings) {
       //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Omega's implementation to display a block.
+ * Minimal theme implementation to display a block.
  *
  * Available variables:
  * - $block->subject: Block title.
@@ -44,20 +44,24 @@
  * @ingroup themeable
  */
 ?>
-<div<?php print $attributes; ?>>
-  <ul class="search-facet-toolbar dropdown menu button-group" data-close-on-click="false" data-click-open="true" data-autoclose="false" data-disable-hover="true" data-dropdown-menu>
-    <!--  <ul class="vertical menu accordion-menu" data-accordion-menu>-->
-  <!--
-  <li>Filter Search Results</li>
-  -->
-
+<nav<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <?php if ($block->subject): ?>
-    <li>
-        <h3<?php print $title_attributes; ?>><?php print $block->subject; ?></h3>
-    </li>
+    <h2<?php print $title_attributes; ?>><?php print $block->subject; ?></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
-    <?php print $content; ?>
-  </ul>
-</div>
+
+  <?php print $content; ?>
+<ul class="dropdown menu" data-dropdown-menu>
+  <li>
+    <a href="#">Item 1</a>
+    <ul class="menu">
+      <li><a href="#">Item 1A</a></li>
+      <!-- ... -->
+    </ul>
+  </li>
+  <li><a href="#">Item 2</a></li>
+  <li><a href="#">Item 3</a></li>
+  <li><a href="#">Item 4</a></li>
+</ul>
+</nav>

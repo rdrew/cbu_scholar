@@ -202,6 +202,26 @@
 
 }
 
+
+[aria-label="Date"] .submenu {
+    //display: block;
+    width:rem-calc(322);
+    
+}
+#ui-datepicker-div {
+    position: static !important;
+    font-family: $body-font-family;
+    .ui-state-default {
+        display: block;
+        padding: .2em;
+
+    }
+    .ui-corner-all {
+        border-radius:0px;
+    }
+}
+
+
 .product-filters-header {
     font-size: 1.25rem;
     padding-top: 0.5rem;

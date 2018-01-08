@@ -70,10 +70,3 @@ header .top-bar {
         display:none;
     }
 }
-#block-system-user-menu {
-    @include show-for(large);
-    .menu a {
-        @extend .button;
-        margin: .5px;
-    }
-}

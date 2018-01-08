@@ -3,8 +3,14 @@
 #block-system-user-menu {
     @include show-for(large);
     .menu a {
-        @extend .button;
+        //@extend .button;
         margin: .5px;
+        padding:0;
+        padding:rem-calc(6);
+    }
+    img {
+        width: 10px;
+        width: rem-calc(26);
     }
 }
 .menu-name-user-menu {
@@ -12,10 +18,11 @@
 }
 .search-dropdown__button {
 
-padding: 0.7rem 1rem;
         margin: .5px;
+        padding:rem-calc(6);
 
 }
+
 
 
 //.user-menu,

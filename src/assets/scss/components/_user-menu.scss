@@ -1,45 +1,35 @@
-.user-menu,
-#block-system-user-menu {
-  @include show-for(large);
-  .menu a {
-    //@extend .button;
-    margin: 0.5px;
-    padding: 0;
-    padding: rem-calc(6);
-  }
-  img {
-    width: 10px;
-    width: rem-calc(26);
-  }
+//@format
+.user-menu {
+    @include show-for(large);
+    .menu a {
+        //@extend .button;
+        margin: 0.5px;
+        padding: 0;
+        padding: rem-calc(6);
+    }
+    img {
+        width: 10px;
+        width: rem-calc(26);
+    }
 }
 .menu-name-user-menu {
-  display: flex;
+    display: flex;
 }
-.search-dropdown__button {
-  margin: 0.5px;
-  padding: rem-calc(6);
-  &:hover {
-    background: $dark-gray;
-  }
+.search-dropdown {
+    &__button {
+        margin: 0.5px;
+        padding: rem-calc(6);
+        &[aria-expanded='true'] {
+            background: $green;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+                0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+    }
+    &__pane {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        background: $medium-gray;
+        .form-wrapper {
+            margin-bottom: 0 !important;
+        }
+    }
 }
-#search-dropdown {
-  top: 59px !important;
-  //border:0px;
-  //background: $orange-light;
-  background: $light-gray;
-  .form-wrapper {
-    margin-bottom: 0 !important;
-  }
-}
-
-//// =========================
-//// There be dragons
-//// =========================
-//#block-system-user-menu {
-////@extend %user-menu;
-//img {
-//@extend %user-menu__icon;
-//}
-//}
-
-//// =========================

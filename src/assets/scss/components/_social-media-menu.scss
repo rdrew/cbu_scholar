@@ -1,21 +1,19 @@
 .social-media-menu,
 %social-media-menu {
-
-    img {
-        width: 2rem;
+  img {
+    width: 2rem;
+  }
+  a {
+    padding: $global-padding/3;
+    margin-left: 2px;
+    border-radius: 4px;
+    &:hover {
+      background: $medium-gray;
     }
-    a {
-        padding: $global-padding/3;
-        margin-left:2px;
-        border-radius:4px;
-        &:hover {
-
-        background:$medium-gray;
-        }
-    }
+  }
 }
 
 //there be dragons
 .block--menu-menu-social-media-links {
-    @extend %social-media-menu;
+  @extend %social-media-menu;
 }

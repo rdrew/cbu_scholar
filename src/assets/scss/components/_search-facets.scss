@@ -1,5 +1,7 @@
+//@format
+
 .page-islandora-search .block--islandora-solr-simple {
-    width:400px;
+    width: 400px;
 }
 //hiding stuff --- this should be temporary
 .block--islandora-solr-current-query {
@@ -7,53 +9,48 @@
         display: none;
     }
     .islandora-solr-query-wrap {
-
         display: none;
     }
 }
 .islandora-solr-filter-wrap {
     h3 {
-    float: left;
-    @extend h5;
-    margin-right: $global-margin/2;
-    &:after {
-        content:":";
+        float: left;
+        @extend h5;
+        margin-right: $global-margin/2;
+        &:after {
+            content: ':';
+        }
     }
-    }
-
 }
 .filter-list {
     @extend .button-group;
     .remove-filter {
         @include button;
 
-
         &.notequal {
             @include button-style($orange, auto, auto);
         }
 
         border-radius: 10px;
-        padding:5px;
-        margin-right:2px;
+        padding: 5px;
+        margin-right: 2px;
     }
     @include menu-base;
     a {
         display: inline;
-        padding:0px;
+        padding: 0px;
     }
-
 }
 
-
-.search-facets, %search-facets {
+.search-facets,
+%search-facets {
     //@extend %green-box;
-    margin-bottom:$global-margin;
+    margin-bottom: $global-margin;
     .is-dropdown-submenu {
         //display: block !important;
     }
     .menu .submenu a {
-        display:inline;
-
+        display: inline;
     }
     a.button {
         @extend .hollow;
@@ -63,31 +60,27 @@
         }
     }
     &__block {
-
     }
     &__block-title {
-
         /*display: none;*/
         @extend .button;
         border: 1px solid $green;
     }
     &__facet {
-
         ul {
             @extend .no-bullet;
             /*margin:0;*/
-            padding:0;
-            padding:10px;
+            padding: 0;
+            padding: 10px;
             //background:$orange-lighter;
             background: #efffd8;
             a {
-                padding:0;
+                padding: 0;
             }
             .submenu a {
                 display: inline !important;
                 //display: ial;
             }
-
         }
         //border-bottom:1px solid #ccc;
         //padding: $global-padding/2 0;
@@ -95,21 +88,18 @@
     &__facet-title {
         /*color:blue;*/
         /*font-family:$pn-semi-Bold;*/
-        font-weight:100;
+        font-weight: 100;
     }
     &__filter-button {
         @extend .small;
     }
     &__plus {
-        width:1rem;
-
+        width: 1rem;
     }
     &__minus {
-
-        width:1rem;
+        width: 1rem;
     }
     &__facet-row {
-
         border: 1px solid #efffd8;
         border-width: 1px 0;
         &:hover {
@@ -123,37 +113,46 @@
     @extend .input-group;
     &__range-field__label {
         @extend .input-group-label;
-        width:4rem;
+        width: 4rem;
     }
 
     &__range-field__text {
-
         @extend .input-group-field;
         /*test*/
     }
 }
 // the good the bad and the fugly
-.search-facets .block__title { @extend %search-facets__block-title; }
-.search-facets .islandora-solr-facet-wrapper { @extend %search-facets__facet; }
-.islandora-solr-facet-wrapper h3 { @extend %search-facets__facet-title; }
-.search-facets .form-submit { @extend %search-facets__filter-button; }
-.search-facets .plus img { @extend %search-facets__plus; }
-.search-facets .minus img { @extend %search-facets__minus; }
-.islandora-solr-facet li { @extend %search-facets__facet-row; }
-
+.search-facets .block__title {
+    @extend %search-facets__block-title;
+}
+.search-facets .islandora-solr-facet-wrapper {
+    @extend %search-facets__facet;
+}
+.islandora-solr-facet-wrapper h3 {
+    @extend %search-facets__facet-title;
+}
+.search-facets .form-submit {
+    @extend %search-facets__filter-button;
+}
+.search-facets .plus img {
+    @extend %search-facets__plus;
+}
+.search-facets .minus img {
+    @extend %search-facets__minus;
+}
+.islandora-solr-facet li {
+    @extend %search-facets__facet-row;
+}
 
 .islandora-solr-date-filter {
     .form-type-textfield {
         @extend %date-picker;
         label {
-
             @extend %date-picker__range-field__label;
         }
         input {
-
             @extend %date-picker__range-field__text;
         }
-
     }
 }
 //============================================
@@ -164,13 +163,11 @@
 
     label {
         color: $dark-gray;
-
     }
 
     .menu.nested {
         margin-left: 0rem;
         margin-bottom: 0.9rem;
-
     }
 
     .menu > li > a {
@@ -178,70 +175,53 @@
         color: darken($dark-gray, 25%);
         font-size: 0.85rem;
         font-weight: 600;
-
     }
 
     .is-accordion-submenu-parent > a::after {
         border-color: $medium-gray transparent transparent;
-
     }
 
     .clear-all {
         font-size: 0.9rem;
         color: $medium-gray;
-
     }
 
     .more {
         color: $primary-color;
         font-size: 0.9rem;
         cursor: pointer;
-
     }
-
-
 }
 
-
-[aria-label="Date"] .submenu {
+[aria-label='Date'] .submenu {
     //display: block;
-    width:rem-calc(322);
-    
+    width: rem-calc(322);
 }
 #ui-datepicker-div {
     position: static !important;
     font-family: $body-font-family;
     .ui-state-default {
         display: block;
-        padding: .2em;
-
+        padding: 0.2em;
     }
     .ui-corner-all {
-        border-radius:0px;
+        border-radius: 0px;
     }
 }
-
 
 .product-filters-header {
     font-size: 1.25rem;
     padding-top: 0.5rem;
-
 }
 
 .product-filters-tab {
     border-top: 1px solid $light-gray;
-
 }
 
 .product-filters-tab:last-child() {
     border-bottom: 1px solid $light-gray;
-
 }
 
 .mobile-product-filters {
     border-bottom: 1px solid $light-gray;
-
 }
-
-
-

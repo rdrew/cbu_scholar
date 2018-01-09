@@ -33,3 +33,4 @@
 
     <!-- /above footer -->
 
+    <?php print render($page['offCanvas']); ?>

@@ -8,7 +8,7 @@ $is_search = module_invoke('islandora_solr', 'block_view', 'simple');
             <?php print render($content['field_cbu_slideshow']); ?>
             <!-- slideshow -->
             <div class="showcase-top">
-                <h1 class="site-title">Search <span class="yellow">FACE</span></h1>
+                <h1 class="site-title">CBU <span class="yellow">Scholar</span></h1>
                 <?php print render($is_search['content']); ?>
             </div>
             <div class="showcase-bottom">

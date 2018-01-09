@@ -22,8 +22,8 @@ $is_search = module_invoke('islandora_solr', 'block_view', 'simple');
 <div class="<?php print $classes; ?>">
   <?php print render($content); ?>
 
-<button class="button" type="button" data-toggle="example-dropdown-1">Search</button>
-<div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
+<span class="search-dropdown__button" title="Search" type="button" data-toggle="search-dropdown">Search</span>
+<div class="dropdown-pane" id="search-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
 <?php print render($is_search['content']); ?>
 </div>
 

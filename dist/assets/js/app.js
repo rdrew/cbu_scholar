@@ -22224,6 +22224,7 @@ exports.Tooltip = Tooltip;
 "use strict";
 
 
+//@format
 (function ($) {
     Drupal.behaviors.searchFilters = {
         attach: function (context, settings) {
@@ -22258,6 +22259,16 @@ exports.Tooltip = Tooltip;
         }
     };
 
+    Drupal.behaviors.scholarCitationDisplay = {
+        attach: function (context, settings) {
+            var label = $('.ir_citationCModel  > .form-item > label');
+            var link = $('.ir_citationCModel  > .form-item > a');
+            var metadataLabel = $('.ir_citationCModel  > fieldset label');
+            label.addClass('show-for-sr');
+            link.addClass('button').prepend('Download ');
+            metadataLabel.addClass('show-for-sr');
+        }
+    };
     Drupal.behaviors.searchDropdown = {
         attach: function (context, settings) {
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';

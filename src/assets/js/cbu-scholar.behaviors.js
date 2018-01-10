@@ -1,3 +1,4 @@
+//@format
 (function($) {
     Drupal.behaviors.searchFilters = {
         attach: function(context, settings) {
@@ -44,6 +45,16 @@
         },
     };
 
+    Drupal.behaviors.scholarCitationDisplay = {
+        attach: function(context, settings) {
+            let label = $('.ir_citationCModel  > .form-item > label');
+            let link = $('.ir_citationCModel  > .form-item > a');
+            let metadataLabel = $('.ir_citationCModel  > fieldset label');
+            label.addClass('show-for-sr');
+            link.addClass('button').prepend('Download ');
+            metadataLabel.addClass('show-for-sr');
+        },
+    };
     Drupal.behaviors.searchDropdown = {
         attach: function(context, settings) {
             //const imagePath = '/sites/all/themes/cbu_scholar/dist/assets/img/';

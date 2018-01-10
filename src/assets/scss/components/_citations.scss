@@ -1,21 +1,41 @@
 //@format
 
-.nice-component-name,
-%nice-component-name {
-    &__part-a {
-        //style
+.citation,
+%citation {
+    &__container {
+        @include callout($green-lighter);
     }
-    &__part-b {
-        //style
+    &__text {
+        font-size: 1.2rem;
+    }
+    &__pdf-display {
+        border: 1px solid #ccc;
+    }
+    &__metadata {
+        
+    }
+    &__metadata-label {
+        @extend h2;
     }
 }
 
 //######################//
 // ~~There be Dragons~~ //
 //######################//
-.fugly-drupal-name-01 {
-    @extend %nice-component-name__part-a;
+.csl-bib-body {
+    @extend %citation__container;
 }
-.fugly-drupal-name-02 {
-    @extend %nice-component-name__part-b;
+.csl-entry {
+    @extend %citation__text;
+}
+#islandora-pdfjs iframe {
+    @extend %citation__pdf-display;
+}
+.ir_citationCModel  > fieldset .fieldset-legend {
+    @extend %citation__metadata-label;
+}
+.ir_citationCModel table tr > td:first-child {
+    //font-weight:bold;
+    width: 120px;
+    color: #497b06;
 }

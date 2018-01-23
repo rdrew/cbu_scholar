@@ -1,6 +1,7 @@
 .pager {
     @include pagination-container;
-
+    margin-bottom: $global-margin*2;
+    
     &__item {
         &--current {
             @include pagination-item-current;
@@ -13,3 +14,112 @@
         }
     }
 }
+
+
+
+
+
+$white: #fff;
+$pagination-primary-color: $orange;
+$pagination-current-color: $orange-dark;
+$pagination-radius: $global-radius;
+
+.pager {
+    text-align:center;
+  .pagination-pointed-button,
+  .pager__item a {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $pagination-radius;
+    background-color: $pagination-primary-color;
+    color: $white;
+    outline: 0;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    border-bottom: 3px solid darken($pagination-primary-color, 10%);
+
+    &:hover {
+      background-color: lighten($pagination-primary-color, 10%);
+    }
+  }
+
+  .current,
+  .pager__item--current {
+    @extend .pagination-pointed-button;
+    background: $pagination-current-color;
+    background: $white;
+    outline: $orange;
+    color: $orange;
+    border-top: 1px solid $orange;
+    border-right: 1px solid $orange;
+    border-left: 1px solid $orange;
+    margin-top:1px;
+
+    &:hover {
+      background-color: lighten($pagination-primary-color, 10%);
+      color: $white;
+    }
+  }
+
+  .pagination-next a,
+  .pager__item--next a,
+  .pager__item--last a {
+    border-radius: $pagination-radius 0 0 $pagination-radius;
+    margin-right: 18px;
+
+    &:hover::after {
+      border-left: 17px solid lighten($pagination-primary-color, 10%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -18px;
+      width: 0;
+      height: 0;
+      border-top: 17px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 17px solid $pagination-primary-color;
+      transition: all 0.2s linear;
+    }
+  }
+
+  .pagination-previous,
+  .pager__item--previous a,
+  .pager__item--first a {
+    @extend .pagination-pointed-button;
+    border-radius: 0 $pagination-radius $pagination-radius 0;
+    margin-left: 18px;
+
+    &:hover::after {
+      border-right: 17px solid lighten($pagination-primary-color, 10%);
+    }
+
+    &::before {
+      content: ""; //removes the arrow
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -18px;
+      width: 0;
+      height: 0;
+      border-bottom: 20px solid transparent;
+      border-top: 17px solid transparent;
+      border-right: 17px solid $pagination-primary-color;
+      transition: all 0.2s linear;
+    }
+  }
+}
+

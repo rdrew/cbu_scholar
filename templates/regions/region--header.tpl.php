@@ -102,7 +102,9 @@ $menu = menu_navigation_links('main-menu');
                 </a>
             </div>
 
-        <h1><a href="/">CBU Scholar</a></h1>
+        <h1><a href="/"><span class="cbu">CBU </span>
+<span class="scholar">Scholar</span>
+</a></h1>
 
             <?php print theme('links__main-menu', array('links' => $menu, 'attributes' => array('class'=> 'main-menu button-group menu'))); ?>
         </div>

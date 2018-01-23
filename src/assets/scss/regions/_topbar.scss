@@ -1,3 +1,4 @@
+//@format
 .top-bar__wrapper,
 .l-header {
     background: $topbar-background;
@@ -11,7 +12,7 @@ header h1 {
     //display:none;
     font-size: rem-calc(28);
     margin-right: $global-margin;
-    line-height:1.5;
+    line-height: 1.5;
 
     //font-family: $pn-thin;
     //font-family: $pn-regular;
@@ -20,6 +21,9 @@ header h1 {
     //font-family: $pn-black;
     a {
         color: $green;
+        .cbu {
+            color: $white;
+        }
     }
 }
 //front page logo
@@ -54,6 +58,11 @@ header h1 {
             display: none;
         }
     }
+
+    .top-bar h1 {
+        margin-left: calc(#{ $logo-width-front } + #{ $global-margin });
+        //@include show-for(large);
+    }
 }
 //interior pages
 
@@ -61,7 +70,7 @@ header h1 {
 .top-bar-left {
     @include xy-grid;
 }
-.top-bar .main-menu  {
+.top-bar .main-menu {
     @include show-for(large);
 }
 .top-bar h1 {

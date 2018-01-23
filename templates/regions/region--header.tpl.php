@@ -5,7 +5,7 @@ $menu = menu_navigation_links('main-menu');
     <div class="grid-container top-bar">
         <div class="top-bar-left">
             <div class="large-logo logo-wrapper">
-                <a class="site-logo" href="/" rel="home" title="<?php print t('Home'); ?>">
+                <a class="site-logo" href="https://www.cbu.ca/library/" rel="home" title="<?php print t('Home'); ?>">
 
 
 
@@ -55,7 +55,7 @@ $menu = menu_navigation_links('main-menu');
                 </a>
             </div>
             <div class="small-logo logo-wrapper">
-                <a class="site-logo" href="/" rel="home" title="<?php print t('Home'); ?>">
+                <a class="site-logo" href="https://www.cbu.ca/library/" rel="home" title="<?php print t('Home'); ?>">
                     <svg class="large logo logo--header" preserveaspectratio="xMidYMid meet" viewbox="0 0 188 176">
     <g transform="matrix(0.918251,0,0,1,0,0)">
         <path d="M188,175.536L90.504,161.325L0,175.536L0,0L188,0L188,175.536Z" style="fill:rgb(248,150,36);fill-rule:nonzero;"/>

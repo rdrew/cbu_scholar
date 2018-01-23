@@ -1,9 +1,26 @@
-.top-bar__wrapper, .l-header {
+.top-bar__wrapper,
+.l-header {
     background: $topbar-background;
 }
 
 header .top-bar {
     position: relative;
+}
+header h1 {
+    margin: 0;
+    //display:none;
+    font-size: rem-calc(28);
+    margin-right: $global-margin;
+    line-height:1.5;
+
+    //font-family: $pn-thin;
+    //font-family: $pn-regular;
+    //font-family: $pn-semi-Bold;
+    //font-family: $pn-bold;
+    //font-family: $pn-black;
+    a {
+        color: $green;
+    }
 }
 //front page logo
 .logo-wrapper {
@@ -13,7 +30,6 @@ header .top-bar {
     z-index: 33;
 }
 .small-logo {
-    //width: $logo-width-interior;
     width: $logo-width-interior;
 }
 .large-logo {
@@ -30,43 +46,49 @@ header .top-bar {
     }
 
     @include breakpoint(medium) {
-
         .large-logo {
             display: block;
-            width:$logo-width-front;
+            width: $logo-width-front;
         }
         .small-logo {
-            display:none;
+            display: none;
         }
     }
 }
 //interior pages
 
-.top-bar .main-menu {
-    margin-left: calc(#{ $logo-width-interior } + #{ $global-margin });
+//.top-bar .main-menu,
+.top-bar-left {
+    @include xy-grid;
+}
+.top-bar .main-menu  {
     @include show-for(large);
+}
+.top-bar h1 {
+    margin-left: calc(#{ $logo-width-interior } + #{ $global-margin });
+    //@include show-for(large);
 }
 //frontpage
 .front {
     //dont show topbar main menu on lp
     .top-bar .main-menu {
-        display:none;
+        display: none;
     }
 }
 
 .top-bar {
     .button-group {
-        margin-bottom:0;
+        margin-bottom: 0;
     }
 }
 
 //mobile menu
 .mobile-menu__button {
     @include hamburger(#ccc, green, 30px, 30px, 3px, 4);
-    transition: all .4s;
+    transition: all 0.4s;
     float: right;
-    margin:rem-calc(6) 0;
+    margin: rem-calc(6) 0;
     @include breakpoint( large ) {
-        display:none;
+        display: none;
     }
 }

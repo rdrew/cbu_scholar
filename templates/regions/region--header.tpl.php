@@ -102,9 +102,9 @@ $menu = menu_navigation_links('main-menu');
                 </a>
             </div>
 
-            <?php
-            print theme('links__main-menu', array('links' => $menu, 'attributes' => array('class'=> 'main-menu button-group menu')));
-            ?>
+        <h1><a href="/">CBU Scholar</a></h1>
+
+            <?php print theme('links__main-menu', array('links' => $menu, 'attributes' => array('class'=> 'main-menu button-group menu'))); ?>
         </div>
         <div class="top-bar-right">
             <?php if ($content): ?>

@@ -22,9 +22,9 @@ $is_search = module_invoke('islandora_solr', 'block_view', 'simple');
 <div class="<?php print $classes; ?>">
   <?php print render($content); ?>
 
-<span class="search-dropdown__button" title="Search" type="button" data-toggle="search-dropdown">Search</span>
-<div class="dropdown-pane" id="search-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
+<span class="search-dropdown__button" title="Search" type="button" data-animate="slide-in-down" data-toggle="search-dropdown">Search</span>
+<div class="search-dropdown__pane dropdown-pane"  id="search-dropdown" data-position="bottom" data-alignment="right" data-auto-focus="true" data-close-on-click="true" data-dropdown >
 <?php print render($is_search['content']); ?>
-</div>
+</div><?php print $frontpage; ?>
 
 </div>

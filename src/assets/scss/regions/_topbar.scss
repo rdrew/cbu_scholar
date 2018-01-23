@@ -12,7 +12,7 @@ header h1 {
     //display:none;
     font-size: rem-calc(28);
     margin-right: $global-margin;
-    line-height: 1.5;
+    line-height: 1.4;
 
     //font-family: $pn-thin;
     //font-family: $pn-regular;
@@ -23,6 +23,9 @@ header h1 {
         color: $green;
         .cbu {
             color: $white;
+        }
+        .scholar {
+            color: $yellow;
         }
     }
 }

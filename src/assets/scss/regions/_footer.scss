@@ -1,34 +1,67 @@
 footer {
     background-color:$footer-bg;
+    padding: $global-padding;
 }
 
 .l-region--footer {
     @include xy-grid-container;
-    @include top-bar-container;
-    background-color: $footer-bg !important;
+    @include xy-grid;
+    /*@include top-bar-container;*/
+    /*background-color: $footer-bg !important;*/
 }
 
-.copyright-block, %copyright-block {
-    @include flex-align(left);
-    display:none;
+.copyright {
+    /*boob*/
+    @include xy-cell(100%);
+
+    @include flex-align(middle);
 }
 
 .social-media-menu, %social-media-menu {
-    display:block;
-    @include flex-align(right);
+    @include xy-cell(50%);
+    /*display:block;*/
     ul {
         background: $footer-bg;
+    @include flex-align(right);
     }
     &__link {
     }
+}
+#block-menu-menu-footer-menu {
+    @include xy-cell(50%);
+    .menu {
+
+    @include flex-align(left);
+    margin-bottom:$global-padding;
+    }
+    li:first-child a {
+        /*display:none;*/
+        padding-right:0;
+        margin-right:0;
+        &:after {
+
+            margin-left:.5rem;
+        content: "/";
+        margin-right: .5rem;
+        }
+    }
+
+    li a {
+        padding-left:0;
+    }
+    a {
+        color: #333;
+        font-size: 1.2rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
 }
 
 /*
  * There be dragons...
  */
-    .block-block-4 {
-        @extend %copyright-block;
-    }
     .block--menu-menu-social-media-links {
         @extend %social-media-menu;
     }

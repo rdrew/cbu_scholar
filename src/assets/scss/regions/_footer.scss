@@ -11,10 +11,9 @@ footer {
 }
 
 .copyright {
-    /*boob*/
     @include xy-cell(100%);
 
-    @include flex-align(middle);
+    //@include flex-align(middle);
 }
 
 .social-media-menu, %social-media-menu {

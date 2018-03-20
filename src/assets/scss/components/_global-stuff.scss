@@ -29,3 +29,10 @@ a {
 #date-range-slider-canvas-0 {
     width: 100% !important;
 }
+
+metadata dl {
+    display:none !important;
+    dt {
+        text-align:right;
+    }
+}

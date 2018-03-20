@@ -22226,6 +22226,19 @@ exports.Tooltip = Tooltip;
 
 //@format
 (function ($) {
+    Drupal.behaviors.scholarDOI = {
+        attach: function (context, settings) {
+            //search results
+            $('dd.mods-identifier-doi-ms').each(function () {
+                var doi = $(this).text().replace(/\s+/g, '');
+                $(this).html('<a href="http://doi.org/' + doi + '">' + doi + '</a>');
+            });
+            var doi_cell = $('.metadata dt:contains("DOI")').next();
+            var doi = doi_cell.text().replace(/\s+/g, '');
+            doi_cell.html('<a href="http://doi.org/' + doi + '">' + doi + '</a>');
+        }
+    };
+
     Drupal.behaviors.searchFilters = {
         attach: function (context, settings) {
             //put the filter term inside the 'remove-filter' link

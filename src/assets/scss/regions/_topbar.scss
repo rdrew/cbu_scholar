@@ -11,7 +11,9 @@ header h1 {
     margin: 0;
     //display:none;
     font-size: rem-calc(32);
-    margin-right: 4 * $global-margin;
+    @include breakpoint(medium) {
+        margin-right: 4 * $global-margin;
+    }
     line-height: 2.4;
 
     //font-family: $pn-thin;
@@ -36,6 +38,9 @@ header h1 {
     //left: $global-margin;
     //z-index: 33;
 }
+a.site-logo {
+    line-height: 0;
+}
 .site-logo svg {
     height: auto;
     polygon#Fill-33 {
@@ -46,14 +51,23 @@ header h1 {
     }
 }
 .small-logo {
-    width: $logo-width-interior;
-    display: none;
+    display: flex;
+    align-items: center;
+    @include breakpoint(medium) {
+        display: none;
+    }
+    margin-right: $global-margin;
     svg {
-        width: rem-calc(64);
+        width: rem-calc(52);
     }
 }
 .large-logo {
-    display: block;
+    display: flex;
+    align-items: center;
+    display: none;
+    @include breakpoint(medium) {
+        display: flex;
+    }
     margin-right: 4 * $global-margin;
     margin-left: $global-margin/2;
     svg {
@@ -87,6 +101,18 @@ header h1 {
     }
 }
 
+.top-bar .top-bar-left {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin-right: auto;
+}
+.top-bar .top-bar-right {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin-left: auto;
+}
 .top-bar {
     .button-group {
         margin-bottom: 0;

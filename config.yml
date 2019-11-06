@@ -5,7 +5,7 @@ URL: "cbufaces.cairnrepo.org"
 ASSETS_DIR: "dist/assets"
 
     #Path on server to remote assets folder (escape the slashes; no trailing slash)
-REMOTE_ASSETS_PATH: "http://cbufaces.cairnrepo.org/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets"
+REMOTE_ASSETS_PATH: "https://cbufaces.cairnrepo.org/sites/cbufaces.cairnrepo.org/themes/cbu_scholar/dist/assets"
 
 LOCALPROXY: "http://drupal7.dev/"
 

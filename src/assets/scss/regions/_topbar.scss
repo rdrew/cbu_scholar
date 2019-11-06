@@ -12,7 +12,7 @@ header h1 {
     //display:none;
     font-size: rem-calc(28);
     margin-right: $global-margin;
-    line-height: 1.4;
+    line-height: 2.4;
 
     //font-family: $pn-thin;
     //font-family: $pn-regular;
@@ -25,16 +25,16 @@ header h1 {
             color: $white;
         }
         .scholar {
-            color: $yellow;
+            color: $orange-new;
         }
     }
 }
 //front page logo
 .logo-wrapper {
-    position: absolute;
-    top: 0;
-    left: $global-margin;
-    z-index: 33;
+    //position: absolute;
+    //top: 0;
+    //left: $global-margin;
+    //z-index: 33;
 }
 .small-logo {
     width: $logo-width-interior;
@@ -42,7 +42,10 @@ header h1 {
 .large-logo {
     display: none;
 }
-
+a.site-logo svg {
+    height: auto;
+    width: 62px;
+}
 //front page
 .front {
     .large-logo {
@@ -55,7 +58,8 @@ header h1 {
     @include breakpoint(medium) {
         .large-logo {
             display: block;
-            width: $logo-width-front;
+            margin-right: $global-margin;
+            //width: $logo-width-front;
         }
         .small-logo {
             display: none;
@@ -63,7 +67,6 @@ header h1 {
     }
 
     .top-bar h1 {
-        margin-left: calc(#{ $logo-width-front } + #{ $global-margin });
         //@include show-for(large);
     }
 }
@@ -77,7 +80,6 @@ header h1 {
     @include show-for(large);
 }
 .top-bar h1 {
-    margin-left: calc(#{ $logo-width-interior } + #{ $global-margin });
     //@include show-for(large);
 }
 //frontpage
@@ -100,7 +102,7 @@ header h1 {
     transition: all 0.4s;
     float: right;
     margin: rem-calc(6) 0;
-    @include breakpoint( large ) {
+    @include breakpoint(large) {
         display: none;
     }
 }

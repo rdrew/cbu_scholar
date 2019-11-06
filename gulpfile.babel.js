@@ -176,7 +176,7 @@ function serverRemote(done) {
     browser.init({
 
         // proxy live site
-        proxy: URL,
+        proxy: "https://cbufaces.cairnrepo.org",
         //https: true,
         logLevel: "debug",
         //startPath: "/user",

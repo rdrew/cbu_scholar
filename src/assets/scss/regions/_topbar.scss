@@ -10,8 +10,8 @@ header .top-bar {
 header h1 {
     margin: 0;
     //display:none;
-    font-size: rem-calc(28);
-    margin-right: $global-margin;
+    font-size: rem-calc(32);
+    margin-right: 4 * $global-margin;
     line-height: 2.4;
 
     //font-family: $pn-thin;
@@ -36,36 +36,32 @@ header h1 {
     //left: $global-margin;
     //z-index: 33;
 }
+.site-logo svg {
+    height: auto;
+    polygon#Fill-33 {
+        fill: #e65200;
+    }
+    path {
+        fill: #e65200;
+    }
+}
 .small-logo {
     width: $logo-width-interior;
+    display: none;
+    svg {
+        width: rem-calc(64);
+    }
 }
 .large-logo {
-    display: none;
-}
-a.site-logo svg {
-    height: auto;
-    width: 62px;
+    display: block;
+    margin-right: 4 * $global-margin;
+    margin-left: $global-margin/2;
+    svg {
+        width: rem-calc(148);
+    }
 }
 //front page
 .front {
-    .large-logo {
-        display: none;
-    }
-    .small-logo {
-        width: 5rem;
-    }
-
-    @include breakpoint(medium) {
-        .large-logo {
-            display: block;
-            margin-right: $global-margin;
-            //width: $logo-width-front;
-        }
-        .small-logo {
-            display: none;
-        }
-    }
-
     .top-bar h1 {
         //@include show-for(large);
     }
@@ -78,6 +74,7 @@ a.site-logo svg {
 }
 .top-bar .main-menu {
     @include show-for(large);
+    align-items: center;
 }
 .top-bar h1 {
     //@include show-for(large);
